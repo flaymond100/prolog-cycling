@@ -1,0 +1,104 @@
+/* Requires tokens.css loaded first */
+
+body {
+  margin: 0;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font: var(--text-body-lg);
+}
+a { color: var(--color-primary); text-decoration: none; }
+a:hover { color: var(--color-primary-deep); }
+
+.ds-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-7);
+  background: var(--color-white);
+  border-bottom: 2px solid var(--color-border-strong);
+}
+.ds-nav__logo {
+  border: 2px solid var(--color-border-strong);
+  padding: var(--space-2) var(--space-4);
+  font: 600 22px var(--font-body);
+  color: var(--color-ink);
+}
+.ds-nav__meta {
+  font: var(--text-eyebrow);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+
+.ds-rule { height: 1px; background: var(--color-border); border: none; }
+
+.ds-button {
+  font: 600 14px var(--font-body);
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+  background: none;
+  border: none;
+  border-bottom: 1.5px solid var(--color-border-strong);
+  padding: var(--space-2) 0;
+  cursor: pointer;
+}
+.ds-button--bold {
+  color: var(--color-white);
+  border-color: rgba(255,255,255,0.5);
+}
+
+.ds-input {
+  border: none;
+  border-bottom: 1.5px solid var(--color-border-strong);
+  background: transparent;
+  font: var(--text-body-md);
+  color: var(--color-ink);
+  padding: var(--space-2) var(--space-1);
+}
+.ds-input::placeholder { color: var(--color-ink-muted); }
+
+.ds-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card);
+}
+
+.ds-hero-bold {
+  background: var(--color-bold-bg);
+  color: var(--color-white);
+}
+.ds-hero-bold__headline {
+  font: 400 clamp(30px, 5.2vw, 88px) var(--font-hero);
+  text-transform: uppercase;
+  line-height: 0.9;
+}
+.ds-hero-bold__headline--outline {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--color-white);
+}
+
+/* Fixed header + animated menu toggle */
+.ds-menu-toggle {
+  position: relative;
+  width: 32px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.ds-menu-toggle span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-ink);
+  transition: transform 0.25s ease, opacity 0.25s ease, top 0.25s ease;
+}
+.ds-menu-toggle span:nth-child(1) { top: 0; }
+.ds-menu-toggle span:nth-child(2) { top: 11px; }
+.ds-menu-toggle span:nth-child(3) { top: 22px; }
+.ds-menu-toggle.is-open span:nth-child(1) { top: 11px; transform: rotate(45deg); }
+.ds-menu-toggle.is-open span:nth-child(2) { opacity: 0; }
+.ds-menu-toggle.is-open span:nth-child(3) { top: 11px; transform: rotate(-45deg); }

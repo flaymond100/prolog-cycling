@@ -1,50 +1,150 @@
 .app-shell {
+  --header-h: 72px;
+
   min-height: 100svh;
   display: flex;
   flex-direction: column;
 }
 
 .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-h);
+  background: var(--color-surface);
+  z-index: 60;
+}
+
+.site-header__inner {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: var(--space-3) var(--space-6);
+  box-sizing: border-box;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-3);
+}
+
+/* Shared bordered-box treatment for logo / menu toggle / contact link */
+.icon-box {
+  border: 2px solid var(--color-border-strong);
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+
+.brand-box {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 20px 32px;
-  border-bottom: 1px solid var(--border);
+  padding: var(--space-2) var(--space-4);
 }
 
 .brand {
-  font-weight: 600;
-  font-size: 20px;
-  color: var(--text-h);
-}
-
-.site-nav {
-  display: flex;
-  gap: 24px;
-}
-
-.site-nav a {
-  color: var(--text);
+  font: var(--text-heading);
+  color: var(--color-ink);
   text-decoration: none;
-  font-weight: 500;
+  white-space: nowrap;
 }
 
-.site-nav a:hover {
-  color: var(--text-h);
+.menu-toggle,
+.contact-box {
+  position: relative;
+  width: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
 }
 
-.site-nav a.active {
-  color: var(--accent);
+.contact-box {
+  text-decoration: none;
+}
+
+/* Animated hamburger → X, centered in the box regardless of its height */
+.menu-toggle span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 20px;
+  height: 2px;
+  background: var(--color-ink);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.menu-toggle span:nth-child(1) {
+  transform: translate(-50%, calc(-50% - 7px));
+}
+.menu-toggle span:nth-child(2) {
+  transform: translate(-50%, -50%);
+}
+.menu-toggle span:nth-child(3) {
+  transform: translate(-50%, calc(-50% + 7px));
+}
+
+.menu-toggle.is-open span:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.menu-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.is-open span:nth-child(3) {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Full-screen nav overlay, toggled by the hamburger */
+.site-menu {
+  position: fixed;
+  inset: var(--header-h) 0 0 0;
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-7) var(--space-6);
+  gap: var(--space-2);
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 55;
+}
+
+.site-menu.is-open {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.site-menu a {
+  font: 400 clamp(32px, 8vw, 64px) var(--font-hero);
+  text-transform: uppercase;
+  color: var(--color-ink);
+  text-decoration: none;
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-menu a:hover,
+.site-menu a.active {
+  color: var(--color-ink-muted);
 }
 
 .site-content {
   flex: 1;
-  padding: 48px 32px;
+  margin-top: var(--header-h);
+  padding: var(--space-8) var(--space-7);
 }
 
 .site-footer {
-  padding: 20px 32px;
-  border-top: 1px solid var(--border);
+  padding: var(--space-5) var(--space-7);
+  background: var(--color-surface);
+  border-top: 2px solid var(--color-border-strong);
   text-align: center;
-  font-size: 14px;
+  font: var(--text-body-sm);
 }
