@@ -35,7 +35,7 @@
 
 /* Shared bordered-box treatment for logo / menu toggle / contact link */
 .icon-box {
-  border: 2px solid var(--color-border-strong);
+  border: 1px solid var(--color-border-strong);
   background: var(--color-surface);
   color: var(--color-ink);
 }

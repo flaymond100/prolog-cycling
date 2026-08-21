@@ -12,13 +12,11 @@ function Home() {
           <span className="kicker-tag">Est. 2026</span>
         </div> */}
           <img className="hero-logo" src={`${import.meta.env.BASE_URL}prolog-big-logo.png`} alt="Prolog Cycling" />
-        <p>
-          Prolog Cycling is recruiting women riders ready to race at a competitive
-          level. Whatever your background, if you've got the drive to push yourself
-          and race as part of a team, we want to hear from you.
+        <p className="hero-text">
+          PROLOG Cycling Team is a new name in women's peloton. We are aiming to give more women chances become pro cyclists and develop it futher.
         </p>
         <a href={JOIN_FORM_URL} target="_blank" rel="noopener noreferrer" className="cta-button">
-          Join the team <span aria-hidden="true">&rarr;</span>
+          Join the team <span className="cta-arrow" aria-hidden="true">&rarr;</span>
         </a>
       </div>
 
@@ -32,26 +30,6 @@ function Home() {
         </p>
       </div>
 
-      <div className="home-block">
-        <span className="kicker-tag">Vision</span>
-        <h2>Our Vision</h2>
-        <p>
-          We race to open doors: building a program where talent is developed, backed,
-          and given a real path to the top of the peloton. Placeholder copy — replace
-          with the team's mission and values.
-        </p>
-      </div>
-
-      <div className="home-block">
-        <span className="kicker-tag">Future</span>
-        <h2>The Road Ahead</h2>
-        <p>
-          New season, new goals — from the calendar of upcoming races to the next
-          generation of riders joining the roster. Placeholder copy — replace with
-          season previews and what's coming next.
-        </p>
-      </div>
-
       <div className="home-block join-cta">
         <span className="kicker-tag">Join Us</span>
         <h2>Sign up to ride with us</h2>
@@ -60,7 +38,7 @@ function Home() {
           experience required — just the drive to race. Sign up and we'll be in touch.
         </p>
         <a href={JOIN_FORM_URL} target="_blank" rel="noopener noreferrer" className="cta-button">
-          Join the team <span aria-hidden="true">&rarr;</span>
+          Join the team <span className="cta-arrow" aria-hidden="true">&rarr;</span>
         </a>
       </div>
     </section>

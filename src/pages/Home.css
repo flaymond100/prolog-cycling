@@ -28,6 +28,14 @@
   gap: var(--space-2);
 }
 
+/* Per-child entrance animation instead of the block-level fade every
+   other section uses — the hero gets its own cascading reveal. */
+.home-hero.home-block {
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
 /* The logo artwork has margin baked in (it's a centered lockup on a
    2000x2000 canvas) — scale + recenter to crop that margin out, so the
    mark reads at full size in the hero. */
@@ -36,6 +44,8 @@
   overflow: hidden;
   position: relative;
   margin: 14px;
+  opacity: 0;
+  animation: hero-logo-in 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .hero-logo img {
@@ -47,11 +57,49 @@
   height: auto;
   max-width: none;
   transform: translate(-50%, -50%);
+  animation: hero-logo-float 4s ease-in-out 3s infinite;
 }
 
-.home-hero p {
+.hero-text {
   max-width: 620px;
   font-size: clamp(16px, 1.6vw, 20px);
+  opacity: 0;
+  animation: hero-fade-up ease 2s forwards;
+}
+
+/* Logo rises up from below into place, then the text + button follow. */
+@keyframes hero-logo-in {
+  from {
+    opacity: 0;
+    transform: translateY(70px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Base transform stays translate(-50%, -50%) — required for the crop —
+   with a small vertical drift layered on top for a gentle idle float. */
+@keyframes hero-logo-float {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(-50%, calc(-50% - 6px));
+  }
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .cta-button {
@@ -67,18 +115,46 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, ease, box-shadow 0.2s ease;
 }
 
 .cta-button:hover {
   background: var(--color-white);
   color: var(--color-ink);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.home-hero  {
+  opacity: 0;
+  animation: hero-fade-up 0.15s ease 3.1s forwards;
+}
+
+.cta-button {
+  opacity: 0;
+  animation: hero-fade-up ease 3.1s forwards;
+}
+
+/* Small continuous nudge on the arrow to invite a click. */
+.cta-arrow {
+  display: inline-block;
+  animation: cta-arrow-nudge 0.8s ease-in-out 3.5s infinite;
+}
+
+@keyframes cta-arrow-nudge {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
 }
 
 .home-block {
   opacity: 0;
   transform: translateY(16px);
-  animation: home-block-in 0.6s ease forwards;
+  animation: home-block-in 1.6s ease forwards;
 }
 
 .home-block + .home-block {
@@ -146,9 +222,18 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .home-block {
+  .home-block,
+  .hero-logo,
+  .hero-text,
+  .home-hero .cta-button,
+  .cta-arrow {
     opacity: 1;
     transform: none;
     animation: none;
+  }
+
+  .hero-logo img {
+    animation: none;
+    transform: translate(-50%, -50%);
   }
 }
