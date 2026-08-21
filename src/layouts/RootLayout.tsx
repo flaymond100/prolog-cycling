@@ -25,8 +25,10 @@ function RootLayout() {
         <div className="site-header__inner">
           <div className="header-left">
             <div className="icon-box brand-box">
-              <NavLink to="/" end className="brand" onClick={closeMenu}>
-                Prolog Cycling
+              <NavLink to="/" end className="brand" onClick={closeMenu} aria-label="Prolog Cycling — home">
+                <span className="brand-logo">
+                  <img src={`${import.meta.env.BASE_URL}prolog-logo.png`} alt="Prolog Cycling" />
+                </span>
               </NavLink>
             </div>
 

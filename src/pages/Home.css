@@ -26,12 +26,27 @@
   display: flex;
   justify-content: center;
   gap: var(--space-2);
-  margin-bottom: var(--space-3);
 }
 
-.home-hero h1 {
-  margin-top: var(--space-3);
-  font-size: clamp(48px, 9vw, 108px);
+/* The logo artwork has margin baked in (it's a centered lockup on a
+   2000x2000 canvas) — scale + recenter to crop that margin out, so the
+   mark reads at full size in the hero. */
+.hero-logo {
+  width: 80%;
+  overflow: hidden;
+  position: relative;
+  margin: 14px;
+}
+
+.hero-logo img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110%;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  max-width: none;
+  transform: translate(-50%, -50%);
 }
 
 .home-hero p {

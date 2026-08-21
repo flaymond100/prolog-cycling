@@ -7,11 +7,11 @@ function Home() {
   return (
     <section className="page page-home">
       <div className="home-hero home-block">
-        <div className="hero-tags">
+        {/* <div className="hero-tags">
           <span className="kicker-tag">Women's Racing Team</span>
           <span className="kicker-tag">Est. 2026</span>
-        </div>
-        <h1>Prolog Cycling</h1>
+        </div> */}
+          <img className="hero-logo" src={`${import.meta.env.BASE_URL}prolog-big-logo.png`} alt="Prolog Cycling" />
         <p>
           Prolog Cycling is recruiting women riders ready to race at a competitive
           level. Whatever your background, if you've got the drive to push yourself
