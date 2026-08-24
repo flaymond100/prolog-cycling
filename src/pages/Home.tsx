@@ -13,8 +13,9 @@ function Home() {
         </div> */}
           <img className="hero-logo" src={`${import.meta.env.BASE_URL}prolog-big-logo.png`} alt="Prolog Cycling" />
         <p className="hero-text">
-          PROLOG Cycling Team is a new name in women's peloton. We are aiming to give more women chances become pro cyclists and develop it futher.
-        </p>
+We are a new name in women's peloton.
+We don't do it the traditional way.
+We are not like the rest - we just different. Want in?        </p>
         <a href={JOIN_FORM_URL} target="_blank" rel="noopener noreferrer" className="cta-button">
           Join the team <span className="cta-arrow" aria-hidden="true">&rarr;</span>
         </a>
