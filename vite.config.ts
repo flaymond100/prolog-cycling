@@ -4,7 +4,9 @@ import path from "node:path";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/prolog-cycling/',
+  // Custom domain (prolog-cycling.com) serves from the root, not a
+  // /prolog-cycling/ subpath — see public/CNAME.
+  base: '/',
   plugins: [react()],
   resolve: {
     alias: {
