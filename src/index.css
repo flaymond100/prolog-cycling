@@ -82,3 +82,18 @@ code {
   flex-direction: column;
   gap: var(--space-2);
 }
+
+/* Accessible/SEO-only content — present for screen readers and crawlers,
+   removed from the visual layout without display:none (which both hides
+   it from assistive tech and reads as low-value to search engines). */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

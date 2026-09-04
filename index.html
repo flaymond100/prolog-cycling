@@ -10,7 +10,62 @@
       href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <title>prolog-cycling</title>
+
+    <title>Prolog Cycling — Women's Competitive Cycling Team</title>
+    <meta
+      name="description"
+      content="Prolog Cycling is a women's competitive cycling team recruiting riders of every level. Join the team and race with us this season."
+    />
+    <link rel="canonical" href="https://prolog-cycling.com/" />
+    <meta name="theme-color" content="#f5f3ed" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Prolog Cycling" />
+    <meta property="og:title" content="Prolog Cycling — Women's Competitive Cycling Team" />
+    <meta
+      property="og:description"
+      content="Prolog Cycling is a women's competitive cycling team recruiting riders of every level. Join the team and race with us this season."
+    />
+    <meta property="og:url" content="https://prolog-cycling.com/" />
+    <meta property="og:image" content="https://prolog-cycling.com/prolog-big-logo.png" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Prolog Cycling — Women's Competitive Cycling Team" />
+    <meta
+      name="twitter:description"
+      content="Prolog Cycling is a women's competitive cycling team recruiting riders of every level. Join the team and race with us this season."
+    />
+    <meta name="twitter:image" content="https://prolog-cycling.com/prolog-big-logo.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SportsTeam",
+        "name": "Prolog Cycling",
+        "sport": "Cycling",
+        "gender": "Female",
+        "url": "https://prolog-cycling.com/",
+        "logo": "https://prolog-cycling.com/prolog-big-logo.png"
+      }
+    </script>
+
+    <script>
+      // Restores the real path GitHub Pages' 404.html redirect encoded into
+      // the query string, before React Router (or anything else) reads the
+      // URL. See public/404.html for the other half of this.
+      ;(function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&')
+            })
+            .join('?')
+          window.history.replaceState(null, '', l.pathname.slice(0, -1) + decoded + l.hash)
+        }
+      })(window.location)
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -1,3 +1,4 @@
+import Seo from '../components/Seo'
 import './Home.css'
 
 const JOIN_FORM_URL =
@@ -6,11 +7,19 @@ const JOIN_FORM_URL =
 function Home() {
   return (
     <section className="page page-home">
+      <Seo
+        title="Prolog Cycling"
+        description="Prolog Cycling is a women's competitive cycling team recruiting riders of every level. Join the team and race with us this season."
+        path="/"
+      />
       <div className="home-hero home-block">
         {/* <div className="hero-tags">
           <span className="kicker-tag">Women's Racing Team</span>
           <span className="kicker-tag">Est. 2026</span>
         </div> */}
+          {/* The logo is the visual headline, but crawlers need real text —
+              this h1 carries the page's actual topic, hidden accessibly. */}
+          <h1 className="visually-hidden">Prolog Cycling — Women's Competitive Cycling Team</h1>
           <img className="hero-logo" src={`${import.meta.env.BASE_URL}prolog-big-logo.png`} alt="Prolog Cycling" />
         <p className="hero-text">
 We are a new name in women's peloton.
