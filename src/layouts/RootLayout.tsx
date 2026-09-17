@@ -1,12 +1,19 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import './RootLayout.css'
+
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void
+  }
+}
 
 function RootLayout() {
   const [menuOpen, setMenuOpen] = useState(false)
   const linkClass = ({ isActive }: { isActive: boolean }) => (isActive ? 'active' : '')
   const closeMenu = () => setMenuOpen(false)
   const { pathname } = useLocation()
+  const isFirstRender = useRef(true)
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
@@ -17,6 +24,22 @@ function RootLayout() {
 
   useEffect(() => {
     window.scrollTo(0, 0)
+  }, [pathname])
+
+  useEffect(() => {
+    // The gtag.js snippet's own 'config' call only fires once, on the
+    // initial document load, so it already covers the first pageview.
+    // Client-side route changes never reload the page, so every navigation
+    // after that needs its own page_view event sent explicitly.
+    if (isFirstRender.current) {
+      isFirstRender.current = false
+      return
+    }
+    window.gtag?.('event', 'page_view', {
+      page_path: pathname,
+      page_location: window.location.href,
+      page_title: document.title,
+    })
   }, [pathname])
 
   return (
