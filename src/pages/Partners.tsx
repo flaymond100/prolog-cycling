@@ -1,69 +1,11 @@
-import { useEffect, useState, type CSSProperties, type ReactNode } from 'react'
+import type { CSSProperties } from 'react'
 import Seo from '../components/Seo'
-import useInView from '../hooks/useInView'
+import Reveal from '../components/Reveal'
+import Counter from '../components/Counter'
 import './Partners.css'
 
 const CONTACT_EMAIL = 'info@prolog-cycling.com'
-const MAILTO = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Partnership inquiry — Prolog Cycling')}`
-
-const reduceMotionQuery = () =>
-  typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
-
-interface RevealProps {
-  children: ReactNode
-  className?: string
-  delay?: number
-}
-
-function Reveal({ children, className = '', delay = 0 }: RevealProps) {
-  const { ref, inView } = useInView<HTMLDivElement>()
-  return (
-    <div
-      ref={ref}
-      className={`reveal${inView ? ' is-in' : ''}${className ? ` ${className}` : ''}`}
-      style={delay ? { transitionDelay: `${delay}ms` } : undefined}
-    >
-      {children}
-    </div>
-  )
-}
-
-interface CounterProps {
-  to: number
-  suffix?: string
-}
-
-function Counter({ to, suffix = '' }: CounterProps) {
-  const { ref, inView } = useInView<HTMLSpanElement>(0.6)
-  const [value, setValue] = useState(0)
-
-  useEffect(() => {
-    if (!inView) return
-    if (reduceMotionQuery()) {
-      setValue(to)
-      return
-    }
-
-    const duration = 1200
-    const start = performance.now()
-    let frame: number
-    const tick = (now: number) => {
-      const progress = Math.min((now - start) / duration, 1)
-      const eased = 1 - (1 - progress) ** 3
-      setValue(Math.round(eased * to))
-      if (progress < 1) frame = requestAnimationFrame(tick)
-    }
-    frame = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(frame)
-  }, [inView, to])
-
-  return (
-    <span ref={ref} className="counter-value">
-      {value}
-      {suffix}
-    </span>
-  )
-}
+const MAILTO = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Prolog Cycling partnership inquiry')}`
 
 function barStyle(percent: number): CSSProperties {
   return { '--h': `${percent}%` } as CSSProperties
@@ -91,7 +33,7 @@ const WHY_US = [
   },
   {
     title: 'In-house performance department',
-    body: 'Individual training plans with testing and metabolic profiling — we invest in every rider.',
+    body: 'Individual training plans with testing and metabolic profiling. We invest in every rider.',
   },
   {
     title: 'Technical capability built-in',
@@ -99,7 +41,7 @@ const WHY_US = [
   },
   {
     title: 'Modern vision on cycling and business',
-    body: 'Cycling has always worked as a B2B network, and we build that in deliberately — riders selected on data and numbers, not connections.',
+    body: 'Cycling has always worked as a B2B network, and we build that in deliberately: riders selected on data and numbers, not connections.',
   },
 ]
 
@@ -136,7 +78,7 @@ const TIERS = [
     name: 'Founding Partner',
     commitment: '3-year commitment',
     highlight: true,
-    slots: '1 slot — ever',
+    slots: '1 slot, ever',
     rows: [
       ['Naming rights', 'Yes'],
       ['Jersey placement', 'Primary'],
@@ -150,7 +92,7 @@ const TIERS = [
     commitment: '2-year commitment',
     slots: '3 slots',
     rows: [
-      ['Naming rights', '—'],
+      ['Naming rights', 'None'],
       ['Jersey placement', 'Secondary'],
       ['Content series', 'Integrated'],
       ['Athlete days / year', '3'],
@@ -162,7 +104,7 @@ const TIERS = [
     commitment: 'Product partnership',
     slots: '6 slots',
     rows: [
-      ['Naming rights', '—'],
+      ['Naming rights', 'None'],
       ['Jersey placement', 'Logo'],
       ['Content series', 'Mentions'],
       ['Athlete days / year', '1'],
@@ -216,22 +158,22 @@ function Partners() {
     <section className="page-partners">
       <Seo
         title="Partner With Us"
-        description="Prolog Cycling is building Germany's most-watched women's racing team, 2027–2032. See the opportunity, the roadmap, and how to become a founding partner."
+        description="Partner with Prolog Cycling: our roadmap from club team to the Women's WorldTour, 2027–2032, the opportunity, and how to become a founding partner."
         path="/partners"
       />
 
       {/* Hero */}
       <div className="pp-band pp-band--dark pp-hero">
         <div className="pp-container">
-          <span className="pp-eyebrow pp-eyebrow--gold">Partner Proposal</span>
+          <span className="pp-eyebrow pp-eyebrow--gold">Partner With Us</span>
           <h1 className="pp-hero-title">Building Germany's most-watched women's racing team.</h1>
-          <p className="pp-hero-sub">2027 – 2032</p>
+          <p className="pp-hero-sub">Our roadmap from club team to the Women's WorldTour, 2027 to 2032.</p>
           <div className="pp-hero-actions">
+            <a href="#roadmap" className="pp-button pp-button--ghost">
+              See the roadmap
+            </a>
             <a href={MAILTO} className="pp-button pp-button--gold">
               Become a partner <span aria-hidden="true">&rarr;</span>
-            </a>
-            <a href="#tiers" className="pp-button pp-button--ghost">
-              See partnership tiers
             </a>
           </div>
         </div>
@@ -326,7 +268,7 @@ function Partners() {
               that races bikes.
             </h2>
             <p className="pp-body pp-body--light">
-              Every other team races first and hopes coverage follows. We invert it — we build the audience, and the
+              Every other team races first and hopes coverage follows. We invert it: we build the audience, and the
               audience funds the racing.
             </p>
             <p className="pp-emphasis">It is the business model.</p>
@@ -340,7 +282,7 @@ function Partners() {
       </div>
 
       {/* Roadmap */}
-      <div className="pp-band">
+      <div className="pp-band" id="roadmap">
         <div className="pp-container">
           <Reveal className="pp-section-head">
             <span className="pp-eyebrow">The Roadmap</span>

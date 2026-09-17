@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Business context
 
-`STRATEGY.md` (gitignored — local only, not in the public repo) summarizes the team's sponsor pitch deck: positioning, roadmap through 2032, partnership tiers/pricing, and the people involved. Read it before writing site copy or anything that should reflect the team's actual stage and strategy rather than generic placeholder content. `src/pages/Partners.tsx` is the public version of this pitch — exact sponsorship pricing was deliberately left out of it (tiers/benefits only, pricing via "enquire") even though `STRATEGY.md` has the real numbers.
+`STRATEGY.md` (gitignored — local only, not in the public repo) summarizes the team's sponsor pitch deck: positioning, roadmap through 2032, partnership tiers/pricing, and the people involved. Read it before writing site copy or anything that should reflect the team's actual stage and strategy rather than generic placeholder content. `src/pages/Partners.tsx` (route `/partners`, "Partner With Us") is the public version of this pitch — exact sponsorship pricing was deliberately left out of it (tiers/benefits only, pricing via "enquire") even though `STRATEGY.md` has the real numbers. `Home.tsx` teases it with a condensed, interactive roadmap timeline linking through via `<Link to="/partners">`.
 
 ## What this is
 
@@ -24,7 +24,7 @@ There is no test suite/runner configured in this repo.
 ## Architecture
 
 - **Routing**: `src/App.tsx` defines all routes under a single `RootLayout` (`/`, `/partners`, `/contacts`, `*` -> `NotFound`). Add new pages by adding a route here and a file under `src/pages/`.
-- **Scroll-reveal / count-up**: `src/hooks/useInView.ts` is a generic IntersectionObserver hook (fires once, doesn't reset). `src/pages/Partners.tsx` builds local `Reveal` and `Counter` components on top of it — reuse that pattern rather than adding an animation library if another page needs scroll-triggered effects.
+- **Scroll-reveal / count-up**: `src/hooks/useInView.ts` is a generic IntersectionObserver hook (fires once, doesn't reset). `src/components/Reveal.tsx` and `src/components/Counter.tsx` are built on top of it and shared across pages (Home, Partners) — reuse them rather than adding an animation library. Each page importing `Reveal` needs the `.reveal`/`.reveal.is-in` CSS rules in its own CSS file (duplicated per-page like the rest of the styling, not centralized).
 - **Layout**: `src/layouts/RootLayout.tsx` is the persistent shell — fixed header with logo, animated hamburger, full-screen nav overlay, footer. It also resets scroll on route change and locks body scroll while the mobile nav is open. Nav links (including the external "Join the Team" Google Form link) are hardcoded here.
 - **SEO**: `src/components/Seo.tsx` is a per-page component (no `<Seo>` render output — it just mutates `document.head` via `useEffect`) that sets title/description/canonical/robots/OG tags. Every page component renders one. Because this is CSR with no SSR, `index.html` also carries static site-wide OG/Twitter/JSON-LD tags as a fallback for crawlers that don't execute JS (`Seo.tsx`'s tags only reach crawlers that do, like Googlebot).
 - **GitHub Pages SPA routing hack**: `public/404.html` + the inline script at the top of `index.html` implement the [rafgraph/spa-github-pages](https://github.com/rafgraph/spa-github-pages) redirect trick, since GitHub Pages has no server-side rewrites. `vite.config.ts` sets `base: '/'` because the custom domain (`public/CNAME`) serves from root, not a `/prolog-cycling/` subpath.
@@ -49,6 +49,6 @@ Locked visual direction (see the design-tokens README for full rationale): **PP 
 | Deep Blue | `#00284D` | `--color-deep-blue` — used sparingly for a contrasting callout (Partners page) |
 | Espresso | `#241A12` | `--color-espresso` — dark section backgrounds (Partners page) |
 
-`--color-surface-alt`/`--color-border` (`#EBE7DA`/`#DBD6C8`) still derive from the old off-white surface and haven't been reconciled against Cream — revisit if they start to clash. The main site (Home, Contacts, the nav shell) stays monochrome black/white — gold/deep-blue/espresso are only used on the Partners page's dark bands, not blended into the everyday UI. When touching the palette, update `tokens.css` and `tokens.json` together (and `design-tokens/README.md`'s color table) so they stay in sync.
+`--color-surface-alt`/`--color-border` (`#EBE7DA`/`#DBD6C8`) still derive from the old off-white surface and haven't been reconciled against Cream — revisit if they start to clash. The main site (Home, Contacts, the nav shell) stays monochrome black/white — gold/deep-blue/espresso are only used on the Partners page's dark bands (plus a small gold accent on Home's roadmap teaser), not blended into the everyday UI. When touching the palette, update `tokens.css` and `tokens.json` together (and `design-tokens/README.md`'s color table) so they stay in sync.
 
 Per-page CSS lives next to its page (`Home.css` next to `Home.tsx`); `RootLayout.css` covers the shared shell. Both rely entirely on the custom properties from `tokens.css` rather than hardcoded values.

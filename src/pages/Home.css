@@ -14,26 +14,17 @@
   color: var(--color-ink);
 }
 
+.kicker-tag--gold {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
 .home-hero {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   padding: var(--space-9) 0 var(--space-8);
-}
-
-.hero-tags {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-2);
-}
-
-/* Per-child entrance animation instead of the block-level fade every
-   other section uses — the hero gets its own cascading reveal. */
-.home-hero.home-block {
-  opacity: 1;
-  transform: none;
-  animation: none;
 }
 
 /* The logo artwork has margin baked in (it's a centered lockup on a
@@ -125,12 +116,12 @@
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
-.home-hero  {
+.home-hero {
   opacity: 0;
   animation: hero-fade-up 0.15s ease 3.1s forwards;
 }
 
-.cta-button {
+.home-hero .cta-button {
   opacity: 0;
   animation: hero-fade-up ease 3.1s forwards;
 }
@@ -151,10 +142,18 @@
   }
 }
 
-.home-block {
+/* Scroll-reveal primitive (Reveal component) — everything below the hero
+   uses this instead of animating on mount, so it only plays once it's
+   actually in view. */
+.reveal {
   opacity: 0;
-  transform: translateY(16px);
-  animation: home-block-in 1.6s ease forwards;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
 }
 
 .home-block + .home-block {
@@ -188,6 +187,8 @@
 
 .home-block--center .kicker-tag {
   margin-bottom: var(--space-3);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .home-block .kicker-tag {
@@ -196,33 +197,294 @@
   width: fit-content;
 }
 
-.home-block--center .kicker-tag {
+/* What We Are — full-bleed dark band. Home's root carries the shared
+   `.page` class (max-width: 720px, centered), unlike the Partners page's own root,
+   so a plain negative-margin cancel isn't enough here — break out to the
+   viewport directly instead. */
+.home-media-block {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  padding: var(--space-9) var(--space-7);
+  background: var(--color-espresso);
+  color: var(--color-white);
+  text-align: center;
+  border-top: none;
+  box-sizing: border-box;
+}
+
+.home-media-heading {
+  color: var(--color-white);
+  max-width: 640px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.home-block:nth-child(1) {
-  animation-delay: 0s;
-}
-.home-block:nth-child(2) {
-  animation-delay: 0.15s;
-}
-.home-block:nth-child(3) {
-  animation-delay: 0.3s;
-}
-.home-block:nth-child(4) {
-  animation-delay: 0.45s;
+.home-media-text {
+  max-width: 560px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.75);
 }
 
-@keyframes home-block-in {
-  to {
+.home-mission-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  max-width: 900px;
+  margin: var(--space-7) auto 0;
+  text-align: left;
+}
+
+.home-mission-item {
+  padding: var(--space-5);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: 2px solid var(--color-gold);
+}
+
+.home-mission-item h3 {
+  margin: 0 0 var(--space-2);
+  font: 600 15px var(--font-body);
+  letter-spacing: 0.02em;
+  color: var(--color-white);
+}
+
+.home-mission-item p {
+  margin: 0;
+  font: var(--text-body-sm);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.roadmap-teaser {
+  max-width: 720px;
+}
+
+.roadmap-teaser-hint {
+  display: inline-block;
+  color: var(--color-primary-deep);
+  font-style: italic;
+}
+
+/* Vertical timeline */
+.timeline {
+  position: relative;
+  margin: var(--space-7) 0 0;
+  text-align: left;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 19px;
+  top: 4px;
+  width: 2px;
+  height: 0;
+  background: var(--color-border-strong);
+  transition: height 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline.is-in .timeline-line {
+  height: calc(100% - 8px);
+}
+
+.timeline-step {
+  position: relative;
+  display: flex;
+  gap: var(--space-4);
+  padding-bottom: var(--space-6);
+}
+
+.timeline-step:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-badge {
+  position: relative;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid var(--color-border-strong);
+  background: var(--color-surface);
+  font: 600 13px var(--font-body);
+  color: var(--color-ink);
+  z-index: 1;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover/focus anywhere in a step nudges its badge — signals the step is
+   interactive before you even notice the +/- toggle. */
+.timeline-step:hover .timeline-badge,
+.timeline-step:focus-within .timeline-badge {
+  transform: scale(1.15);
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 6px rgba(226, 187, 122, 0.2);
+}
+
+.timeline-step.is-open .timeline-badge {
+  border-color: var(--color-gold);
+  background: var(--color-gold);
+}
+
+.timeline-step--final .timeline-badge {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+  color: var(--color-gold);
+}
+
+.timeline-step--current .timeline-badge {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 4px rgba(226, 187, 122, 0.25);
+}
+
+.timeline-content {
+  padding-top: var(--space-1);
+}
+
+.timeline-now {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: var(--space-2);
+  font: 600 10px var(--font-body);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-primary-deep);
+}
+
+.timeline-now-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  animation: timeline-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes timeline-pulse {
+  0%,
+  100% {
     opacity: 1;
-    transform: none;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.5);
   }
 }
 
+.timeline-trigger {
+  all: unset;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  width: 100%;
+  cursor: pointer;
+}
+
+.timeline-trigger:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 6px;
+}
+
+.timeline-trigger:hover .timeline-stage {
+  transform: translateX(4px);
+}
+
+.timeline-stage {
+  margin: 0;
+  font: 600 17px var(--font-body);
+  color: var(--color-ink);
+  transition: transform 0.2s ease;
+}
+
+/* Plus/minus toggle — same morph language as the header's hamburger. */
+.timeline-toggle {
+  position: relative;
+  flex: none;
+  width: 16px;
+  height: 16px;
+}
+
+.timeline-toggle::before,
+.timeline-toggle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: var(--color-ink);
+  transition: transform 0.3s ease;
+}
+
+.timeline-toggle::before {
+  width: 12px;
+  height: 2px;
+  transform: translate(-50%, -50%);
+}
+
+.timeline-toggle::after {
+  width: 2px;
+  height: 12px;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.timeline-step.is-open .timeline-toggle::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* Grid-rows trick: animates height without knowing the content's height. */
+.timeline-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease;
+}
+
+.timeline-step.is-open .timeline-panel {
+  grid-template-rows: 1fr;
+}
+
+.timeline-panel-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.timeline-panel-inner p {
+  margin: var(--space-3) 0 0;
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--color-border);
+  font: var(--text-body-sm);
+  color: var(--color-ink-muted);
+}
+
+.timeline-points {
+  list-style: none;
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.timeline-points li {
+  position: relative;
+  padding-left: 16px;
+  font: var(--text-body-sm);
+  color: var(--color-ink-muted);
+}
+
+.timeline-points li::before {
+  content: '\203A';
+  position: absolute;
+  left: 0;
+  color: var(--color-gold);
+  font-weight: 700;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .home-block,
+  .reveal,
   .hero-logo,
   .hero-text,
   .home-hero .cta-button,
@@ -235,5 +497,32 @@
   .hero-logo img {
     animation: none;
     transform: translate(-50%, -50%);
+  }
+
+  .timeline-line {
+    height: calc(100% - 8px);
+    transition: none;
+  }
+
+  .timeline-now-dot {
+    animation: none;
+  }
+
+  .timeline-panel,
+  .timeline-badge,
+  .timeline-stage,
+  .timeline-toggle::before,
+  .timeline-toggle::after {
+    transition: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-media-block {
+    padding: var(--space-7) var(--space-4);
+  }
+
+  .home-mission-grid {
+    grid-template-columns: 1fr;
   }
 }
