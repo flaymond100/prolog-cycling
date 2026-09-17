@@ -61,11 +61,17 @@
 }
 
 @keyframes scroll-fade-blur {
-  from {
+  /* Held flat through the first ~55% of the exit range: on tall bands
+     (most of them once stacked to a single column on mobile) "exit"
+     starts as soon as the band stops fully covering the viewport, which
+     can be while half the screen is still that band. Delaying the ramp
+     keeps it fully visible until it's mostly scrolled past instead. */
+  0%,
+  55% {
     opacity: 1;
     filter: blur(0);
   }
-  to {
+  100% {
     opacity: 0;
     filter: blur(10px);
   }
