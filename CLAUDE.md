@@ -33,7 +33,7 @@ There is no test suite/runner configured in this repo.
 - `tokens.json` — same tokens as JSON for non-CSS tooling.
 - `components.css`, `reference.html` — component reference/preview, not wired into the app; recreate patterns as actual React components instead of using this CSS as-is.
 
-Locked visual direction (see the design-tokens README for full rationale): **Anton** for hero/headline type (bold, condensed, all-caps), **Inter** for body/UI, **Instrument Serif** for quieter secondary display moments; straight-line accents (near-zero border radius, 2px solid borders for emphasis) instead of rounded/soft shapes; 8px base spacing scale (`--space-1` … `--space-9`).
+Locked visual direction (see the design-tokens README for full rationale): **PP Monument Extended** is the only typeface, used for every text role — `--font-hero`, `--font-body`, and `--font-display` all resolve to it (self-hosted — `public/fonts/*.woff2` + `@font-face` in `tokens.css`; only weights 300/400/900 exist, each with an italic, so tokens asking for an in-between weight resolve to the nearest one); straight-line accents (near-zero border radius, 2px solid borders for emphasis) instead of rounded/soft shapes; 8px base spacing scale (`--space-1` … `--space-9`).
 
 **Brand palette**:
 
