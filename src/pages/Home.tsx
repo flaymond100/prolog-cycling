@@ -169,7 +169,7 @@ function Home() {
         </Link>
       </div>
 
-      <div className="home-block join-cta scroll-fade">
+      {/* <div className="home-block join-cta scroll-fade">
         <span className="kicker-tag">Join Us</span>
         <h2>Sign up to ride with us</h2>
         <p>
@@ -179,7 +179,7 @@ function Home() {
         <a href={JOIN_FORM_URL} target="_blank" rel="noopener noreferrer" className="cta-button">
           Join the team <span className="cta-arrow" aria-hidden="true">&rarr;</span>
         </a>
-      </div>
+      </div> */}
     </section>
   )
 }
