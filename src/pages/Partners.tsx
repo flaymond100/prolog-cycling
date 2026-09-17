@@ -163,7 +163,7 @@ function Partners() {
       />
 
       {/* Hero */}
-      <div className="pp-band pp-band--dark pp-hero">
+      <div className="pp-band pp-band--dark pp-hero scroll-fade">
         <div className="pp-container">
           <span className="pp-eyebrow pp-eyebrow--gold">Partner With Us</span>
           <h1 className="pp-hero-title">Building Germany's most-watched women's racing team.</h1>
@@ -180,7 +180,7 @@ function Partners() {
       </div>
 
       {/* The Opportunity */}
-      <div className="pp-band">
+      <div className="pp-band scroll-fade">
         <div className="pp-container">
           <Reveal className="pp-section-head">
             <span className="pp-eyebrow">The Opportunity</span>
@@ -220,7 +220,7 @@ function Partners() {
       </div>
 
       {/* The Problem */}
-      <div className="pp-band pp-band--alt">
+      <div className="pp-band pp-band--alt scroll-fade">
         <div className="pp-container">
           <Reveal className="pp-section-head">
             <span className="pp-eyebrow">The Problem</span>
@@ -258,7 +258,7 @@ function Partners() {
       </div>
 
       {/* What We Are */}
-      <div className="pp-band pp-band--dark">
+      <div className="pp-band pp-band--dark scroll-fade">
         <div className="pp-container pp-split">
           <Reveal>
             <span className="pp-eyebrow pp-eyebrow--gold">What We Are</span>
@@ -282,7 +282,7 @@ function Partners() {
       </div>
 
       {/* Roadmap */}
-      <div className="pp-band" id="roadmap">
+      <div className="pp-band scroll-fade" id="roadmap">
         <div className="pp-container">
           <Reveal className="pp-section-head">
             <span className="pp-eyebrow">The Roadmap</span>
@@ -311,7 +311,7 @@ function Partners() {
       </div>
 
       {/* Why Us */}
-      <div className="pp-band pp-band--alt">
+      <div className="pp-band pp-band--alt scroll-fade">
         <div className="pp-container">
           <Reveal className="pp-section-head">
             <span className="pp-eyebrow">Why Us</span>
@@ -331,7 +331,7 @@ function Partners() {
       </div>
 
       {/* The Engine */}
-      <div className="pp-band">
+      <div className="pp-band scroll-fade">
         <div className="pp-container">
           <Reveal className="pp-section-head">
             <span className="pp-eyebrow">The Engine</span>
@@ -361,7 +361,7 @@ function Partners() {
       </div>
 
       {/* The Package */}
-      <div className="pp-band pp-band--alt">
+      <div className="pp-band pp-band--alt scroll-fade">
         <div className="pp-container">
           <Reveal className="pp-section-head">
             <span className="pp-eyebrow">The Package</span>
@@ -385,7 +385,7 @@ function Partners() {
       </div>
 
       {/* Partnership Tiers */}
-      <div className="pp-band" id="tiers">
+      <div className="pp-band scroll-fade" id="tiers">
         <div className="pp-container">
           <Reveal className="pp-section-head">
             <span className="pp-eyebrow">Partnership Tiers</span>
@@ -425,7 +425,7 @@ function Partners() {
       </div>
 
       {/* Measurement */}
-      <div className="pp-band pp-band--alt">
+      <div className="pp-band pp-band--alt scroll-fade">
         <div className="pp-container">
           <Reveal className="pp-section-head">
             <span className="pp-eyebrow">Measurement</span>
@@ -451,7 +451,7 @@ function Partners() {
       </div>
 
       {/* People */}
-      <div className="pp-band">
+      <div className="pp-band scroll-fade">
         <div className="pp-container">
           <Reveal className="pp-section-head">
             <span className="pp-eyebrow">The People</span>
@@ -476,7 +476,7 @@ function Partners() {
       </div>
 
       {/* Closing CTA */}
-      <div className="pp-band pp-band--dark pp-closing">
+      <div className="pp-band pp-band--dark pp-closing scroll-fade">
         <div className="pp-container">
           <Reveal>
             <h2 className="pp-h2 pp-h2--light">

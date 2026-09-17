@@ -27,6 +27,15 @@
   padding: var(--space-9) 0 var(--space-8);
 }
 
+/* Same layout the direct children used to get from .home-hero, now one
+   level in (see the JSX comment on home-hero-inner for why it's split). */
+.home-hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 /* The logo artwork has margin baked in (it's a centered lockup on a
    2000x2000 canvas) — scale + recenter to crop that margin out, so the
    mark reads at full size in the hero. */
@@ -116,11 +125,6 @@
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
-.home-hero {
-  opacity: 0;
-  animation: hero-fade-up 0.15s ease 3.1s forwards;
-}
-
 .home-hero .cta-button {
   opacity: 0;
   animation: hero-fade-up ease 3.1s forwards;
@@ -154,6 +158,38 @@
 .reveal.is-in {
   opacity: 1;
   transform: none;
+}
+
+/* Scroll-driven blur/fade — a block is fully visible the moment any part
+   of it is on screen (so it never sits there half-blurred at rest), then
+   blurs and fades out only once it starts scrolling past the top. CSS-only
+   (animation-timeline ties progress straight to scroll position, no JS
+   scroll listener); on browsers without support the base rule below just
+   leaves it fully visible, so nothing breaks. */
+.scroll-fade {
+  opacity: 1;
+  filter: blur(0);
+}
+
+@supports (animation-timeline: view()) {
+  @media not (prefers-reduced-motion: reduce) {
+    .scroll-fade {
+      animation: scroll-fade-blur linear both;
+      animation-timeline: view();
+      animation-range: exit;
+    }
+  }
+}
+
+@keyframes scroll-fade-blur {
+  from {
+    opacity: 1;
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    filter: blur(10px);
+  }
 }
 
 .home-block + .home-block {

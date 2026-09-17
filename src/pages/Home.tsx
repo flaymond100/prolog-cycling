@@ -73,19 +73,26 @@ function Home() {
         path="/"
       />
       <div className="home-hero home-block">
-        {/* The logo is the visual headline, but crawlers need real text —
-            this h1 carries the page's actual topic, hidden accessibly. */}
-        <h1 className="visually-hidden">Prolog Cycling | Women's Competitive Cycling Team</h1>
-        <img className="hero-logo" src={`${import.meta.env.BASE_URL}prolog-logo-tp.png`} alt="Prolog Cycling" />
-        <p className="hero-text">
-          We're a new name in the women's peloton, built differently from day one.
-        </p>
-        <a href={JOIN_FORM_URL} target="_blank" rel="noopener noreferrer" className="cta-button">
-          Join the team <span className="cta-arrow" aria-hidden="true">&rarr;</span>
-        </a>
+        {/* Entrance choreography (opacity + delay) lives on .home-hero
+            itself, timed against page load — a scroll-linked animation on
+            the same element would fight it over `opacity`. The exit
+            blur/fade on scroll lives on this inner wrapper instead, so the
+            two never touch the same property on the same element. */}
+        <div className="home-hero-inner scroll-fade">
+          {/* The logo is the visual headline, but crawlers need real text —
+              this h1 carries the page's actual topic, hidden accessibly. */}
+          <h1 className="visually-hidden">Prolog Cycling | Women's Competitive Cycling Team</h1>
+          <img className="hero-logo" src={`${import.meta.env.BASE_URL}prolog-logo-tp.png`} alt="Prolog Cycling" />
+          <p className="hero-text">
+            We're a new name in the women's peloton, built differently from day one.
+          </p>
+          <a href={JOIN_FORM_URL} target="_blank" rel="noopener noreferrer" className="cta-button">
+            Join the team <span className="cta-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
       </div>
 
-      <Reveal className="home-block home-media-block">
+      <div className="home-block home-media-block scroll-fade">
         <span className="kicker-tag kicker-tag--gold">What We Are</span>
         <h2 className="home-media-heading">Raising the level of women's cycling.</h2>
         <p className="home-media-text">
@@ -100,9 +107,9 @@ function Home() {
             </Reveal>
           ))}
         </div>
-      </Reveal>
+      </div>
 
-      <Reveal className="home-block home-block--center roadmap-teaser">
+      <div className="home-block home-block--center roadmap-teaser scroll-fade">
         <span className="kicker-tag">The Roadmap</span>
         <h2>Six years. One breakaway.</h2>
         <p>
@@ -160,9 +167,9 @@ function Home() {
         <Link to="/partners" className="cta-button">
           Partner With Us <span className="cta-arrow" aria-hidden="true">&rarr;</span>
         </Link>
-      </Reveal>
+      </div>
 
-      <Reveal className="home-block join-cta">
+      <div className="home-block join-cta scroll-fade">
         <span className="kicker-tag">Join Us</span>
         <h2>Sign up to ride with us</h2>
         <p>
@@ -172,7 +179,7 @@ function Home() {
         <a href={JOIN_FORM_URL} target="_blank" rel="noopener noreferrer" className="cta-button">
           Join the team <span className="cta-arrow" aria-hidden="true">&rarr;</span>
         </a>
-      </Reveal>
+      </div>
     </section>
   )
 }

@@ -39,6 +39,38 @@
   transform: none;
 }
 
+/* Scroll-driven blur/fade — a band is fully visible the moment any part of
+   it is on screen (so it never sits there half-blurred at rest), then
+   blurs and fades out only once it starts scrolling past the top.
+   CSS-only (animation-timeline ties progress straight to scroll position,
+   no JS scroll listener); on browsers without support the base rule below
+   just leaves it fully visible, so nothing breaks. */
+.scroll-fade {
+  opacity: 1;
+  filter: blur(0);
+}
+
+@supports (animation-timeline: view()) {
+  @media not (prefers-reduced-motion: reduce) {
+    .scroll-fade {
+      animation: scroll-fade-blur linear both;
+      animation-timeline: view();
+      animation-range: exit;
+    }
+  }
+}
+
+@keyframes scroll-fade-blur {
+  from {
+    opacity: 1;
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    filter: blur(10px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
