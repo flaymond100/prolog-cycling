@@ -2,6 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Business context
+
+`STRATEGY.md` (gitignored — local only, not in the public repo) summarizes the team's sponsor pitch deck: positioning, roadmap through 2032, partnership tiers/pricing, and the people involved. Read it before writing site copy, an About/Partners page, or anything that should reflect the team's actual stage and strategy rather than generic placeholder content.
+
 ## What this is
 
 Marketing/landing site for **Prolog Cycling**, a women's competitive UCI cycling team. Single-page-app style site (React Router, client-side only, no backend) deployed to GitHub Pages at the custom domain `prolog-cycling.com`. The site is currently in a "coming soon" / recruiting stage — copy on `Home` is explicitly placeholder in places (team section) and the primary CTA everywhere is a Google Form to join the team.

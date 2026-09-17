@@ -22,9 +22,8 @@ function Home() {
           <h1 className="visually-hidden">Prolog Cycling — Women's Competitive Cycling Team</h1>
           <img className="hero-logo" src={`${import.meta.env.BASE_URL}prolog-logo-tp.png`} alt="Prolog Cycling" />
         <p className="hero-text">
-We are a new name in women's peloton.
-We don't do it the traditional way.
-We are not like the rest - we just different. Want in?        </p>
+          We're a new name in the women's peloton, built differently from day one.
+        </p>
         <a href={JOIN_FORM_URL} target="_blank" rel="noopener noreferrer" className="cta-button">
           Join the team <span className="cta-arrow" aria-hidden="true">&rarr;</span>
         </a>
@@ -34,9 +33,8 @@ We are not like the rest - we just different. Want in?        </p>
         <span className="kicker-tag">The Team</span>
         <h2>Riding for more than results</h2>
         <p>
-          Prolog Cycling brings together riders, directeurs sportifs, and support staff
-          racing at the top level of the sport. Placeholder copy — swap in rider bios,
-          squad photos, and season results here.
+          Prolog Cycling brings together riders, coaches and support staff building
+          something from the ground up — a team shaped by data and modern vision.
         </p>
       </div>
 
