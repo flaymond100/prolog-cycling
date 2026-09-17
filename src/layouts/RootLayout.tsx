@@ -59,6 +59,9 @@ function RootLayout() {
         <NavLink to="/" end className={linkClass} onClick={closeMenu}>
           Home
         </NavLink>
+        <NavLink to="/partners" className={linkClass} onClick={closeMenu}>
+          Partners
+        </NavLink>
         <a
           href="https://docs.google.com/forms/d/e/1FAIpQLSd_qNpqO2Tuz-VpnB4NPq-oOti9teQuLl2HicjRsHMk8XBEJg/viewform?fbzx=-4112900210892274421&pli=1"
           target="_blank"

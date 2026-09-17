@@ -55,6 +55,11 @@
   --color-primary-deep: #4D4D4D;
   --color-bold-bg: #000000;
 
+  /* Brand accent — used on dark/pitch-style sections (e.g. the Partners page) */
+  --color-gold: #E2BB7A;
+  --color-deep-blue: #00284D;
+  --color-espresso: #241A12;
+
   /* Type families */
   --font-hero: 'PP Monument Extended', sans-serif;
   --font-body: 'PP Monument Extended', sans-serif;

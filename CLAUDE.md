@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Business context
 
-`STRATEGY.md` (gitignored — local only, not in the public repo) summarizes the team's sponsor pitch deck: positioning, roadmap through 2032, partnership tiers/pricing, and the people involved. Read it before writing site copy, an About/Partners page, or anything that should reflect the team's actual stage and strategy rather than generic placeholder content.
+`STRATEGY.md` (gitignored — local only, not in the public repo) summarizes the team's sponsor pitch deck: positioning, roadmap through 2032, partnership tiers/pricing, and the people involved. Read it before writing site copy or anything that should reflect the team's actual stage and strategy rather than generic placeholder content. `src/pages/Partners.tsx` is the public version of this pitch — exact sponsorship pricing was deliberately left out of it (tiers/benefits only, pricing via "enquire") even though `STRATEGY.md` has the real numbers.
 
 ## What this is
 
@@ -23,7 +23,8 @@ There is no test suite/runner configured in this repo.
 
 ## Architecture
 
-- **Routing**: `src/App.tsx` defines all routes under a single `RootLayout` (`/`, `/contacts`, `*` -> `NotFound`). Add new pages by adding a route here and a file under `src/pages/`.
+- **Routing**: `src/App.tsx` defines all routes under a single `RootLayout` (`/`, `/partners`, `/contacts`, `*` -> `NotFound`). Add new pages by adding a route here and a file under `src/pages/`.
+- **Scroll-reveal / count-up**: `src/hooks/useInView.ts` is a generic IntersectionObserver hook (fires once, doesn't reset). `src/pages/Partners.tsx` builds local `Reveal` and `Counter` components on top of it — reuse that pattern rather than adding an animation library if another page needs scroll-triggered effects.
 - **Layout**: `src/layouts/RootLayout.tsx` is the persistent shell — fixed header with logo, animated hamburger, full-screen nav overlay, footer. It also resets scroll on route change and locks body scroll while the mobile nav is open. Nav links (including the external "Join the Team" Google Form link) are hardcoded here.
 - **SEO**: `src/components/Seo.tsx` is a per-page component (no `<Seo>` render output — it just mutates `document.head` via `useEffect`) that sets title/description/canonical/robots/OG tags. Every page component renders one. Because this is CSR with no SSR, `index.html` also carries static site-wide OG/Twitter/JSON-LD tags as a fallback for crawlers that don't execute JS (`Seo.tsx`'s tags only reach crawlers that do, like Googlebot).
 - **GitHub Pages SPA routing hack**: `public/404.html` + the inline script at the top of `index.html` implement the [rafgraph/spa-github-pages](https://github.com/rafgraph/spa-github-pages) redirect trick, since GitHub Pages has no server-side rewrites. `vite.config.ts` sets `base: '/'` because the custom domain (`public/CNAME`) serves from root, not a `/prolog-cycling/` subpath.
@@ -43,11 +44,11 @@ Locked visual direction (see the design-tokens README for full rationale): **PP 
 
 | Name | Hex | Used as |
 |---|---|---|
-| Champagne Gold | `#E2BB7A` | not yet wired into tokens.css |
+| Champagne Gold | `#E2BB7A` | `--color-gold` — accent on dark/pitch-style sections (Partners page) |
 | Cream | `#F6F1E7` | `--color-surface` (page background) |
-| Deep Blue | `#00284D` | not yet wired into tokens.css |
-| Espresso | `#241A12` | not yet wired into tokens.css |
+| Deep Blue | `#00284D` | `--color-deep-blue` — used sparingly for a contrasting callout (Partners page) |
+| Espresso | `#241A12` | `--color-espresso` — dark section backgrounds (Partners page) |
 
-`--color-surface-alt`/`--color-border` (`#EBE7DA`/`#DBD6C8`) still derive from the old off-white surface and haven't been reconciled against Cream — revisit if they start to clash. Ink/border/primary tokens are still pure black/white (monochrome direction); Champagne Gold, Deep Blue, and Espresso aren't wired into `tokens.css` yet. When wiring in the rest of the palette, update `tokens.css` and `tokens.json` together (and `design-tokens/README.md`'s color table) so they stay in sync, and check `public/og-image.png` against whatever surface color is chosen.
+`--color-surface-alt`/`--color-border` (`#EBE7DA`/`#DBD6C8`) still derive from the old off-white surface and haven't been reconciled against Cream — revisit if they start to clash. The main site (Home, Contacts, the nav shell) stays monochrome black/white — gold/deep-blue/espresso are only used on the Partners page's dark bands, not blended into the everyday UI. When touching the palette, update `tokens.css` and `tokens.json` together (and `design-tokens/README.md`'s color table) so they stay in sync.
 
 Per-page CSS lives next to its page (`Home.css` next to `Home.tsx`); `RootLayout.css` covers the shared shell. Both rely entirely on the custom properties from `tokens.css` rather than hardcoded values.
