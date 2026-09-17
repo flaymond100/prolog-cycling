@@ -27,7 +27,7 @@ function RootLayout() {
             <div className="icon-box brand-box">
               <NavLink to="/" end className="brand" onClick={closeMenu} aria-label="Prolog Cycling — home">
                 <span className="brand-logo">
-                  <img src={`${import.meta.env.BASE_URL}prolog-logo.png`} alt="Prolog Cycling" />
+                  <img src={`${import.meta.env.BASE_URL}prolog-logo-tp.png`} alt="Prolog Cycling" />
                 </span>
               </NavLink>
             </div>

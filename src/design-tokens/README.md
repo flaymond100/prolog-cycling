@@ -23,7 +23,7 @@ These are **high-fidelity design references** (colors, type, spacing are final c
 |---|---|---|
 | `--color-white` | #FFFFFF | base surface |
 | `--color-black` | #000000 | raw black, bold rules/borders |
-| `--color-surface` | #F5F3ED | page background (warm off-white, not stark white) |
+| `--color-surface` | #F6F1E7 | page background (Cream) |
 | `--color-surface-alt` | #EBE7DA | secondary panels |
 | `--color-border` | #DBD6C8 | hairline rules, dividers |
 | `--color-border-strong` | #000000 | bordered boxes (logo, inputs), focus rules |

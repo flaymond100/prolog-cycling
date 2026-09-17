@@ -20,7 +20,7 @@ function Home() {
           {/* The logo is the visual headline, but crawlers need real text —
               this h1 carries the page's actual topic, hidden accessibly. */}
           <h1 className="visually-hidden">Prolog Cycling — Women's Competitive Cycling Team</h1>
-          <img className="hero-logo" src={`${import.meta.env.BASE_URL}prolog-big-logo.png`} alt="Prolog Cycling" />
+          <img className="hero-logo" src={`${import.meta.env.BASE_URL}prolog-logo-tp.png`} alt="Prolog Cycling" />
         <p className="hero-text">
 We are a new name in women's peloton.
 We don't do it the traditional way.

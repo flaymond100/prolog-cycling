@@ -1,0 +1,49 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## What this is
+
+Marketing/landing site for **Prolog Cycling**, a women's competitive UCI cycling team. Single-page-app style site (React Router, client-side only, no backend) deployed to GitHub Pages at the custom domain `prolog-cycling.com`. The site is currently in a "coming soon" / recruiting stage — copy on `Home` is explicitly placeholder in places (team section) and the primary CTA everywhere is a Google Form to join the team.
+
+## Commands
+
+```bash
+npm run dev       # start Vite dev server
+npm run build     # tsc -b (typecheck, no emit) + vite build -> dist/
+npm run preview   # serve the built dist/ locally
+npm run lint       # oxlint
+```
+
+There is no test suite/runner configured in this repo.
+
+## Architecture
+
+- **Routing**: `src/App.tsx` defines all routes under a single `RootLayout` (`/`, `/contacts`, `*` -> `NotFound`). Add new pages by adding a route here and a file under `src/pages/`.
+- **Layout**: `src/layouts/RootLayout.tsx` is the persistent shell — fixed header with logo, animated hamburger, full-screen nav overlay, footer. It also resets scroll on route change and locks body scroll while the mobile nav is open. Nav links (including the external "Join the Team" Google Form link) are hardcoded here.
+- **SEO**: `src/components/Seo.tsx` is a per-page component (no `<Seo>` render output — it just mutates `document.head` via `useEffect`) that sets title/description/canonical/robots/OG tags. Every page component renders one. Because this is CSR with no SSR, `index.html` also carries static site-wide OG/Twitter/JSON-LD tags as a fallback for crawlers that don't execute JS (`Seo.tsx`'s tags only reach crawlers that do, like Googlebot).
+- **GitHub Pages SPA routing hack**: `public/404.html` + the inline script at the top of `index.html` implement the [rafgraph/spa-github-pages](https://github.com/rafgraph/spa-github-pages) redirect trick, since GitHub Pages has no server-side rewrites. `vite.config.ts` sets `base: '/'` because the custom domain (`public/CNAME`) serves from root, not a `/prolog-cycling/` subpath.
+- **Deploy**: `.github/workflows/pages.yml` builds and deploys `dist/` to GitHub Pages on every push to `main`. No preview/staging environment.
+- **Path alias**: `@` -> `src/` (configured in `vite.config.ts`).
+
+## Design tokens
+
+`src/design-tokens/` is the source of truth for the visual system, documented in `src/design-tokens/README.md`:
+- `tokens.css` — CSS custom properties (imported once, at the top of `src/index.css`) for color, type, spacing, radius.
+- `tokens.json` — same tokens as JSON for non-CSS tooling.
+- `components.css`, `reference.html` — component reference/preview, not wired into the app; recreate patterns as actual React components instead of using this CSS as-is.
+
+Locked visual direction (see the design-tokens README for full rationale): **Anton** for hero/headline type (bold, condensed, all-caps), **Inter** for body/UI, **Instrument Serif** for quieter secondary display moments; straight-line accents (near-zero border radius, 2px solid borders for emphasis) instead of rounded/soft shapes; 8px base spacing scale (`--space-1` … `--space-9`).
+
+**Brand palette**:
+
+| Name | Hex | Used as |
+|---|---|---|
+| Champagne Gold | `#E2BB7A` | not yet wired into tokens.css |
+| Cream | `#F6F1E7` | `--color-surface` (page background) |
+| Deep Blue | `#00284D` | not yet wired into tokens.css |
+| Espresso | `#241A12` | not yet wired into tokens.css |
+
+`--color-surface-alt`/`--color-border` (`#EBE7DA`/`#DBD6C8`) still derive from the old off-white surface and haven't been reconciled against Cream — revisit if they start to clash. Ink/border/primary tokens are still pure black/white (monochrome direction); Champagne Gold, Deep Blue, and Espresso aren't wired into `tokens.css` yet. When wiring in the rest of the palette, update `tokens.css` and `tokens.json` together (and `design-tokens/README.md`'s color table) so they stay in sync, and check `public/og-image.png` against whatever surface color is chosen.
+
+Per-page CSS lives next to its page (`Home.css` next to `Home.tsx`); `RootLayout.css` covers the shared shell. Both rely entirely on the custom properties from `tokens.css` rather than hardcoded values.
