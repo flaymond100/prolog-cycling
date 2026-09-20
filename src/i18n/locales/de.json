@@ -217,7 +217,7 @@
       "founding": {
         "name": "Gründungspartner",
         "commitment": "3 Jahre Laufzeit",
-        "slots": "1 Platz, unwiederbringlich",
+        "slots": "1 Platz",
         "rows": {
           "namingRights": "Ja",
           "jerseyPlacement": "Primär",
@@ -300,11 +300,11 @@
   },
   "contacts": {
     "heading": "Kontakt",
-    "intro": "Kontaktiere das Prolog-Cycling-Team.",
+    "intro": "Kontaktiere das Prolog Cycling Team.",
     "email": "E-Mail",
     "phone": "Telefon",
     "address": "Adresse",
-    "addressTbd": "Folgt"
+    "addressTbd": "Leipzig, Deutschland"
   },
   "notFound": {
     "heading": "404",

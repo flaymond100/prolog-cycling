@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
-import i18n, { LANGUAGE_STORAGE_KEY, type SupportedLanguage } from '../i18n/config'
+import i18n, { type SupportedLanguage } from '../i18n/config'
 import { localizedPath } from '../i18n/routing'
 import LanguageSwitcher from '../components/LanguageSwitcher'
 import './RootLayout.css'
@@ -25,11 +25,6 @@ function RootLayout({ lang }: RootLayoutProps) {
 
   useEffect(() => {
     document.documentElement.lang = lang
-    try {
-      window.localStorage.setItem(LANGUAGE_STORAGE_KEY, lang)
-    } catch {
-      // localStorage unavailable — language still applies for this session.
-    }
   }, [lang])
 
   useEffect(() => {

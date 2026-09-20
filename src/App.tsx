@@ -4,14 +4,13 @@ import Home from './pages/Home'
 import Partners from './pages/Partners'
 import Contacts from './pages/Contacts'
 import NotFound from './pages/NotFound'
-import { getStoredLanguage, type SupportedLanguage } from './i18n/config'
+import type { SupportedLanguage } from './i18n/config'
 import { localizedPath } from './i18n/routing'
 
-/** Bare "/" (and legacy unprefixed page links) pick up the remembered
- *  language preference, defaulting to English — an explicit /en or /de
- *  link always wins over this. */
+/** Bare "/" (and legacy unprefixed page links) always default to English —
+ *  an explicit /en or /de link is the only thing that picks German. */
 function LanguageRedirect({ path }: { path: string }) {
-  return <Navigate to={localizedPath(getStoredLanguage(), path)} replace />
+  return <Navigate to={localizedPath('en', path)} replace />
 }
 
 function languageRoutes(lang: SupportedLanguage) {

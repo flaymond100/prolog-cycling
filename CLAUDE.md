@@ -38,7 +38,7 @@ There is no test suite/runner configured in this repo.
 - `tokens.json` — same tokens as JSON for non-CSS tooling.
 - `components.css`, `reference.html` — component reference/preview, not wired into the app; recreate patterns as actual React components instead of using this CSS as-is.
 
-Locked visual direction (see the design-tokens README for full rationale): **PP Monument Extended** is the only typeface, used for every text role — `--font-hero`, `--font-body`, and `--font-display` all resolve to it (self-hosted — `public/fonts/*.woff2` + `@font-face` in `tokens.css`; only weights 300/400/900 exist, each with an italic, so tokens asking for an in-between weight resolve to the nearest one); straight-line accents (near-zero border radius, 2px solid borders for emphasis) instead of rounded/soft shapes; 8px base spacing scale (`--space-1` … `--space-9`).
+Locked visual direction (see the design-tokens README for full rationale): two typefaces — **PP Monument Extended** for the logo lockup, headlines, and italic display moments (`--font-hero`, `--font-display`; self-hosted — `public/fonts/*.woff2` + `@font-face` in `tokens.css`; only weights 300/400/900 exist, each with an italic, so tokens asking for an in-between weight resolve to the nearest one), and **Archivo** for body/UI copy (`--font-body`; a Google Font, loaded via `<link>` in `index.html` — Monument reads too heavy across large blocks of running text); straight-line accents (near-zero border radius, 2px solid borders for emphasis) instead of rounded/soft shapes; 8px base spacing scale (`--space-1` … `--space-9`).
 
 **Brand palette**:
 

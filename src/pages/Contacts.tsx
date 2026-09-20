@@ -11,11 +11,11 @@ function Contacts() {
       <p>{t('contacts.intro')}</p>
       <ul className="contact-list">
         <li>
-          {t('contacts.email')}: info@prolog-cycling.com
+          {t('contacts.email')}: <a href="mailto:info@prolog-cycling.com">info@prolog-cycling.com</a>
         </li>
-        <li>
+        {/* <li>
           {t('contacts.phone')}: +00 000 000 000
-        </li>
+        </li> */}
         <li>
           {t('contacts.address')}: {t('contacts.addressTbd')}
         </li>

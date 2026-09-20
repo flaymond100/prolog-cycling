@@ -6,7 +6,7 @@ Small token/component reference for the "coming soon" direction. Built for a wom
 These are **high-fidelity design references** (colors, type, spacing are final choices, not placeholders). Recreate them in your app's existing stack (React/Vue/etc.) using its component patterns — don't ship this CSS/HTML as-is in production.
 
 ## Direction locked
-- **Site-wide font: PP Monument Extended** — bold, extended, all-caps-style headline type, used for every `--text-*` token (hero, headings, body, UI) — there is no second typeface anymore. Self-hosted (`public/fonts/`, `@font-face` in `tokens.css`) — not a Google Font. Only Light (300), Regular (400), and Black (900) weights exist (each with an italic), so any token asking for an in-between weight (e.g. 500, 600) resolves to the nearest of those.
+- **Two typefaces**: **PP Monument Extended** for the logo lockup, headlines, and italic display moments (`--font-hero`, `--font-display`) — bold, extended, all-caps-style headline type. Self-hosted (`public/fonts/`, `@font-face` in `tokens.css`) — not a Google Font. Only Light (300), Regular (400), and Black (900) weights exist (each with an italic), so any token asking for an in-between weight (e.g. 500, 600) resolves to the nearest of those. **Archivo** for body/UI copy (`--font-body`) — Monument reads too heavy across large blocks of running text; Archivo is a Google Font, loaded via `<link>` in `index.html`.
 - **Palette: monochrome** — black, white, and a mid-gray for muted/hover states. No color accent; contrast and bold 2px black rules/borders carry the hierarchy instead (inspired by a fixed-header reference with a bordered logo box and animated hamburger icon).
 - **Primary hero style**: bold layered type — PP Monument Extended headline on a solid black field, one line rendered as an outline so imagery shows through, white header/footer bars with a 2px black rule.
 - **Header**: fixed to the top of the viewport, bordered logo box (2px solid black), animated hamburger → X toggle for the mobile nav.
@@ -35,7 +35,8 @@ These are **high-fidelity design references** (colors, type, spacing are final c
 Palette stays to these values — don't introduce color accents; use opacity/gray mixes of `--color-ink` if an in-between tint is ever needed.
 
 ## Typography
-- All text — hero, headings, body, UI, italic display moments: **PP Monument Extended**. `--font-hero`, `--font-body`, and `--font-display` all resolve to it; the token names describe role/size, not a different typeface.
+- Hero, headings, italic display moments: **PP Monument Extended** (`--font-hero`, `--font-display`).
+- Body copy and UI text: **Archivo** (`--font-body`) — regular/500/600 weights plus italic are loaded; anything heavier falls back to the nearest loaded weight.
 - Previously explored but no longer used: Inter (body/UI), Instrument Serif (italic display), Anton (headline). Alt pairings explored at the time: Cormorant Garamond (softer/classic), Bricolage Grotesque (modern sans, no serif).
 
 Scale in `tokens.css` under `--text-*`.

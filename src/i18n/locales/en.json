@@ -217,7 +217,7 @@
       "founding": {
         "name": "Founding Partner",
         "commitment": "3-year commitment",
-        "slots": "1 slot, ever",
+        "slots": "1 slot",
         "rows": {
           "namingRights": "Yes",
           "jerseyPlacement": "Primary",
@@ -304,7 +304,7 @@
     "email": "Email",
     "phone": "Phone",
     "address": "Address",
-    "addressTbd": "TBD"
+    "addressTbd": "Leipzig, Germany"
   },
   "notFound": {
     "heading": "404",

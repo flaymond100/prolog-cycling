@@ -6,17 +6,17 @@
 
 .kicker-tag {
   display: inline-block;
-  border: 2px solid var(--color-border-strong);
+  background: var(--color-ink);
   padding: var(--space-1) var(--space-3);
   font: var(--text-eyebrow);
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-ink);
+  color: var(--color-surface);
 }
 
 .kicker-tag--gold {
-  border-color: var(--color-gold);
-  color: var(--color-gold);
+  background: var(--color-gold);
+  color: var(--color-espresso);
 }
 
 .home-hero {
@@ -256,6 +256,14 @@
   box-sizing: border-box;
 }
 
+/* .home-block .kicker-tag above makes the tag a block box (for its own
+   margin-bottom), which drops it out of this section's text-align: center —
+   re-center it explicitly to match the heading/paragraph below it. */
+.home-media-block .kicker-tag {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .home-media-heading {
   color: var(--color-white);
   max-width: 640px;
@@ -286,7 +294,7 @@
 
 .home-mission-item h3 {
   margin: 0 0 var(--space-2);
-  font: 600 15px var(--font-body);
+  font: 600 20px var(--font-body);
   letter-spacing: 0.02em;
   color: var(--color-white);
 }
@@ -438,7 +446,7 @@
 
 .timeline-stage {
   margin: 0;
-  font: 600 17px var(--font-body);
+  font: 600 21px var(--font-body);
   color: var(--color-ink);
   transition: transform 0.2s ease;
 }

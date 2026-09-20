@@ -337,7 +337,7 @@
 }
 
 .pp-numbered-item h3 {
-  font: 600 18px var(--font-body);
+  font: 600 24px var(--font-body);
   margin: 0 0 var(--space-2);
   color: var(--color-ink);
 }
@@ -429,7 +429,7 @@
 }
 
 .pp-roadmap-stage {
-  font: 600 15px var(--font-body);
+  font: 600 20px var(--font-body);
   color: var(--color-ink);
 }
 
@@ -490,7 +490,7 @@
 }
 
 .pp-card h3 {
-  font: 600 17px var(--font-body);
+  font: 600 22px var(--font-body);
   margin: 0 0 var(--space-2);
 }
 
@@ -581,7 +581,7 @@
 }
 
 .pp-tier h3 {
-  font: 600 20px var(--font-body);
+  font: 600 22px var(--font-body);
   margin: 0 0 var(--space-1);
 }
 
@@ -662,7 +662,7 @@
 }
 
 .pp-person h3 {
-  font: 600 17px var(--font-body);
+  font: 600 22px var(--font-body);
   margin: 0 0 var(--space-1);
 }
 

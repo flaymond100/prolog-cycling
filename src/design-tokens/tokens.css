@@ -60,20 +60,22 @@
   --color-deep-blue: #00284D;
   --color-espresso: #241A12;
 
-  /* Type families */
+  /* Type families — PP Monument Extended for logo/headlines/hero display,
+     Archivo (Google Font, loaded in index.html) for body/UI copy: Monument's
+     weight reads heavy across large blocks of running text. */
   --font-hero: 'PP Monument Extended', sans-serif;
-  --font-body: 'PP Monument Extended', sans-serif;
+  --font-body: 'Archivo', sans-serif;
   --font-display: 'PP Monument Extended', sans-serif;
 
   /* Type scale */
   --text-display-xl: italic 400 clamp(48px, 7vw, 104px)/1.08 var(--font-display);
   --text-display-lg: italic 400 44px/1.1 var(--font-display);
   --text-display-md: italic 400 32px/1.15 var(--font-display);
-  --text-heading: 400 22px/1.3 var(--font-hero);
-  --text-eyebrow: 500 11px/1 var(--font-body);
-  --text-body-lg: 400 16px/1.7 var(--font-body);
-  --text-body-md: 400 14px/1.6 var(--font-body);
-  --text-body-sm: 400 12px/1.5 var(--font-body);
+  --text-heading: 400 28px/1.25 var(--font-hero);
+  --text-eyebrow: 500 12px/1 var(--font-body);
+  --text-body-lg: 400 22px/1.6 var(--font-body);
+  --text-body-md: 400 20px/1.5 var(--font-body);
+  --text-body-sm: 400 18px/1.5 var(--font-body);
 
   /* Spacing (8px base) */
   --space-1: 4px;

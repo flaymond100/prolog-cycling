@@ -37,7 +37,7 @@ const ENGINE: { id: string; n: string; dark?: boolean }[] = [
   { id: 'channels', n: '03' },
 ]
 
-const TIER_ROW_KEYS = ['namingRights', 'jerseyPlacement', 'contentSeries', 'athleteDays', 'contentLicence'] as const
+const TIER_ROW_KEYS = ['namingRights','contentLicence', 'jerseyPlacement', 'contentSeries', 'athleteDays', ] as const
 
 const TIERS: { id: string; highlight?: boolean }[] = [
   { id: 'founding', highlight: true },
@@ -280,7 +280,7 @@ function Partners() {
               >
                 {tier.highlight && <span className="pp-tier-badge">{t('partners.tiers.badgeOnlyOne')}</span>}
                 <h3>{t(`partners.tiers.${tier.id}.name`)}</h3>
-                <p className="pp-tier-commitment">{t(`partners.tiers.${tier.id}.commitment`)}</p>
+                {/* <p className="pp-tier-commitment">{t(`partners.tiers.${tier.id}.commitment`)}</p> */}
                 <ul className="pp-tier-rows">
                   {TIER_ROW_KEYS.map((rowKey) => (
                     <li key={rowKey}>
