@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
+import i18n, { LANGUAGE_STORAGE_KEY, type SupportedLanguage } from '../i18n/config'
+import { localizedPath } from '../i18n/routing'
+import LanguageSwitcher from '../components/LanguageSwitcher'
 import './RootLayout.css'
 
 declare global {
@@ -8,12 +11,26 @@ declare global {
   }
 }
 
-function RootLayout() {
+interface RootLayoutProps {
+  lang: SupportedLanguage
+}
+
+function RootLayout({ lang }: RootLayoutProps) {
+  const t = i18n.getFixedT(lang)
   const [menuOpen, setMenuOpen] = useState(false)
   const linkClass = ({ isActive }: { isActive: boolean }) => (isActive ? 'active' : '')
   const closeMenu = () => setMenuOpen(false)
   const { pathname } = useLocation()
   const isFirstRender = useRef(true)
+
+  useEffect(() => {
+    document.documentElement.lang = lang
+    try {
+      window.localStorage.setItem(LANGUAGE_STORAGE_KEY, lang)
+    } catch {
+      // localStorage unavailable — language still applies for this session.
+    }
+  }, [lang])
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
@@ -48,7 +65,13 @@ function RootLayout() {
         <div className="site-header__inner">
           <div className="header-left">
             <div className="icon-box brand-box">
-              <NavLink to="/" end className="brand" onClick={closeMenu} aria-label="Prolog Cycling home">
+              <NavLink
+                to={localizedPath(lang, '/')}
+                end
+                className="brand"
+                onClick={closeMenu}
+                aria-label={t('nav.brandAriaLabel')}
+              >
                 <span className="brand-logo">
                   <img src={`${import.meta.env.BASE_URL}prolog-logo-tp.png`} alt="Prolog Cycling" />
                 </span>
@@ -60,7 +83,7 @@ function RootLayout() {
               className={`icon-box menu-toggle${menuOpen ? ' is-open' : ''}`}
               aria-expanded={menuOpen}
               aria-controls="site-nav"
-              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-label={menuOpen ? t('nav.closeMenu') : t('nav.openMenu')}
               onClick={() => setMenuOpen((open) => !open)}
             >
               <span />
@@ -69,21 +92,26 @@ function RootLayout() {
             </button>
           </div>
 
-          <NavLink to="/contacts" className="icon-box contact-box" aria-label="Contact us" onClick={closeMenu}>
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-              <rect x="3" y="5" width="18" height="14" rx="1" />
-              <path d="M3 6.5 12 13 21 6.5" />
-            </svg>
-          </NavLink>
+          <div className="header-right">
+            <LanguageSwitcher lang={lang} />
+            <NavLink
+              to={localizedPath(lang, '/contacts')}
+              className="icon-box contact-box"
+              aria-label={t('nav.contactUs')}
+              onClick={closeMenu}
+            >
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="1" />
+                <path d="M3 6.5 12 13 21 6.5" />
+              </svg>
+            </NavLink>
+          </div>
         </div>
       </header>
 
       <nav id="site-nav" className={`site-menu${menuOpen ? ' is-open' : ''}`}>
-        <NavLink to="/" end className={linkClass} onClick={closeMenu}>
-          Home
-        </NavLink>
-        <NavLink to="/partners" className={linkClass} onClick={closeMenu}>
-          Partner With Us
+        <NavLink to={localizedPath(lang, '/')} end className={linkClass} onClick={closeMenu}>
+          {t('nav.home')}
         </NavLink>
         <a
           href="https://docs.google.com/forms/d/e/1FAIpQLSd_qNpqO2Tuz-VpnB4NPq-oOti9teQuLl2HicjRsHMk8XBEJg/viewform?fbzx=-4112900210892274421&pli=1"
@@ -91,19 +119,22 @@ function RootLayout() {
           rel="noopener noreferrer"
           onClick={closeMenu}
         >
-          Join the Team
+          {t('nav.joinTeam')}
         </a>
-        <NavLink to="/contacts" className={linkClass} onClick={closeMenu}>
-          Contacts
+        <NavLink to={localizedPath(lang, '/partners')} className={linkClass} onClick={closeMenu}>
+          {t('nav.partners')}
+        </NavLink>
+        <NavLink to={localizedPath(lang, '/contacts')} className={linkClass} onClick={closeMenu}>
+          {t('nav.contacts')}
         </NavLink>
       </nav>
 
       <main className="site-content">
-        <Outlet />
+        <Outlet context={{ lang }} />
       </main>
 
       <footer className="site-footer">
-        <p>&copy; {new Date().getFullYear()} Prolog Cycling. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Prolog Cycling. {t('footer.rights')}</p>
       </footer>
     </div>
   )

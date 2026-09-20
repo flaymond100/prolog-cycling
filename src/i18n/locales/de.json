@@ -1,0 +1,314 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "joinTeam": "Join Team",
+    "partners": "Partner werden",
+    "contacts": "Kontakt",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "contactUs": "Kontaktiere uns",
+    "brandAriaLabel": "Prolog Cycling Startseite"
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten."
+  },
+  "languageSwitcher": {
+    "label": "Sprache"
+  },
+  "seo": {
+    "home": {
+      "title": "Prolog Cycling",
+      "description": "Prolog Cycling ist ein Frauen-Radsportteam, das Fahrerinnen jeden Levels sucht. Werde Teil des Teams und fahre diese Saison mit uns."
+    },
+    "partners": {
+      "title": "Partner werden",
+      "description": "Werde Partner von Prolog Cycling: unser Fahrplan vom Clubteam zur Women's WorldTour, 2027–2032, die Chance dahinter und wie du Gründungspartner wirst."
+    },
+    "contacts": {
+      "title": "Kontakt",
+      "description": "Kontaktiere Prolog Cycling, ein Frauen-Radsportteam im Leistungssport."
+    },
+    "notFound": {
+      "title": "Seite nicht gefunden",
+      "description": "Die gesuchte Seite existiert nicht."
+    }
+  },
+  "home": {
+    "hiddenTitle": "Prolog Cycling | Frauen-Radsportteam im Leistungssport",
+    "heroText": "Wir sind ein neuer Name im Frauenpeloton, von Anfang an anders aufgebaut.",
+    "joinTeam": "Join Team",
+    "whatWeAreKicker": "Wer wir sind",
+    "raisingLevel": "Wir heben das Niveau im Frauenradsport.",
+    "mediaText": "Prolog Cycling will den Frauenradsport voranbringen, nicht auf dem traditionellen Weg, sondern indem wir neu denken, wie ein Team aufgebaut wird.",
+    "mission": {
+      "developmentFirst": {
+        "title": "Förderung zuerst",
+        "body": "Wir wollen den Sport selbst wachsen lassen: mehr Fahrerinnen, mehr Chancen, mehr Tiefe im Frauenpeloton."
+      },
+      "dataOverGuesswork": {
+        "title": "Daten statt Bauchgefühl",
+        "body": "Individuelle Trainingspläne, Leistungsdiagnostik und Stoffwechselprofile. Der Fortschritt jeder Fahrerin wird gemessen, nicht vermutet."
+      },
+      "differentStructure": {
+        "title": "Eine andere Struktur",
+        "body": "Fahrerinnen werden nach Daten und Zahlen ausgewählt, nicht nach Beziehungen. Ein Team, das um die Athletinnen herum gebaut ist, nicht um Hierarchien."
+      }
+    },
+    "roadmapKicker": "Der Fahrplan",
+    "roadmapHeading": "Sechs Jahre. Eine Ausreiße.",
+    "roadmapIntro": "Wir haben den Weg vom ersten Rennen bis zur Women's WorldTour kartiert, 2027 bis 2032. Keine Abkürzungen, kein Ratespiel: So kommen wir genau dorthin.",
+    "roadmapHint": "Tippe auf einen Schritt für mehr Details.",
+    "weAreHere": "Hier stehen wir",
+    "partnerWithUs": "Partner werden",
+    "roadmap": {
+      "2027": {
+        "stage": "Clubteam",
+        "points": ["Aufbau des Teamfundaments", "Rennen in ganz Deutschland auf verschiedenen Ebenen"],
+        "detail": "Wir starten als Amateur-Clubteam, fahren lokale Rennen und dokumentieren jeden Schritt, während wir ein Publikum und ein Trainingssystem aufbauen, noch bevor wir eine UCI-Lizenz anstreben."
+      },
+      "2028": {
+        "stage": "Frauen-Bundesliga",
+        "points": ["Nationale Ergebnisse", "Erster Titelpartner"],
+        "detail": "Der Aufstieg in Deutschlands nationale Liga. Echter Wettbewerb, echte Ergebnisse, und der erste kommerzielle Partner an unserer Seite."
+      },
+      "2029": {
+        "stage": "UCI Continental",
+        "points": ["Voller UCI-Rennkalender", "Einstieg in das UCI-System"],
+        "detail": "Die Registrierung als UCI-Continental-Team öffnet die Tür zum internationalen Kalender. Hier treten wir formell in die Struktur des Profi-Radsports ein."
+      },
+      "2030": {
+        "stage": "Elite Continental",
+        "points": ["Erster Start bei der Women's WorldTour"],
+        "detail": "Ein stärkeres Aufgebot und ein volles europäisches Rennprogramm, ausgerichtet exakt auf einen Start bei der Women's WorldTour."
+      },
+      "2032": {
+        "stage": "UCI ProTeam",
+        "points": ["Zugang zur WorldTour öffnet sich", "Aus der Ausreißergruppe wird das Peloton"],
+        "detail": "Das Ziel: voller ProTeam-Status und ein Start bei der Women's WorldTour, der Beweis, dass das Modell von null an funktioniert."
+      }
+    }
+  },
+  "partners": {
+    "hero": {
+      "eyebrow": "Partner werden",
+      "title": "Wir bauen Deutschlands meistgesehenes Frauen-Radsportteam auf.",
+      "subtitle": "Unser Fahrplan vom Clubteam zur Women's WorldTour, 2027 bis 2032.",
+      "seeRoadmap": "Fahrplan ansehen",
+      "becomePartner": "Partner werden"
+    },
+    "opportunity": {
+      "eyebrow": "Die Chance",
+      "heading": "Das am schnellsten wachsende Segment im europäischen Sport",
+      "chartCaption": "Quelle: UCI-Teambudgetzahlen 2026.",
+      "stats": {
+        "growth": "Wachstum in 3 Saisons",
+        "worldTeams": "WorldTeams gibt es weltweit",
+        "proTeams": "ProTeams gibt es weltweit"
+      }
+    },
+    "problem": {
+      "eyebrow": "Das Problem",
+      "heading": "Radsport-Zielgruppen zu erreichen wird immer teurer",
+      "items": {
+        "paidSocial": {
+          "title": "Bezahlte Social-Media-Werbung wird jedes Jahr teurer",
+          "body": "TKPs steigen, Kampagnen enden, und danach bleibt dir kein Wert. Das Budget hinterlässt keinen bleibenden Vermögenswert."
+        },
+        "passiveSponsorship": {
+          "title": "Klassisches Team-Sponsoring ist passiv",
+          "body": "Ein Logo auf dem Trikot ist nicht messbar und nicht differenzierend. Du bist einer von fünfzehn."
+        },
+        "topTier": {
+          "title": "Die Spitzenklasse ist unerschwinglich",
+          "body": "Ein WorldTour-Team der Männer kostet 5–15 Mio. € pro Jahr und bringt dir trotzdem nur ein Logo."
+        }
+      },
+      "callout": "Du brauchst Aufmerksamkeit, Zurechenbarkeit und eine Geschichte. Ein Trikotlogo liefert keins davon."
+    },
+    "whatWeAre": {
+      "eyebrow": "Wer wir sind",
+      "headingLine1": "Ein Medienunternehmen,",
+      "headingLine2": "das Rad fährt.",
+      "body": "Jedes andere Team fährt zuerst Rennen und hofft auf Berichterstattung. Wir drehen es um: Wir bauen zuerst das Publikum auf, und das Publikum finanziert das Renngeschehen.",
+      "emphasis": "Das ist unser Geschäftsmodell.",
+      "statLabel": "unseres Budgets im ersten Jahr fließt in die Content-Produktion",
+      "statNote": "Kein Team auf unserem Niveau macht das."
+    },
+    "roadmap": {
+      "eyebrow": "Der Fahrplan",
+      "heading": "Sechs Jahre bis zur ProTeam-Stufe",
+      "caption": "Die Continental-Registrierung 2029 ist der Punkt, an dem wir in das UCI-System eintreten. Alles davor ist Vorbereitung, alles danach ist Fortschritt.",
+      "steps": {
+        "2027": { "stage": "Clubteam", "detail": "1 Mio. Videoaufrufe. Fundament öffentlich aufgebaut." },
+        "2028": { "stage": "Frauen-Bundesliga", "detail": "Nationale Ergebnisse. Erster Titelpartner." },
+        "2029": { "stage": "UCI Continental", "detail": "Voller UCI-Rennkalender." },
+        "2030": { "stage": "Elite Continental", "detail": "Erster Start bei der Women's WorldTour." },
+        "2032": { "stage": "UCI ProTeam", "detail": "Zugang zur WorldTour öffnet sich." }
+      }
+    },
+    "whyUs": {
+      "eyebrow": "Warum wir",
+      "heading": "Vier Dinge, die kein anderes Team auf diesem Niveau hat",
+      "items": {
+        "audience": {
+          "title": "Ein Publikum schon vor dem ersten Rennen",
+          "body": "Die Content-Produktion beginnt, bevor die Rennen beginnen. Die Geschichte wird bereits gefilmt."
+        },
+        "performance": {
+          "title": "Eigene Leistungsabteilung",
+          "body": "Individuelle Trainingspläne mit Leistungsdiagnostik und Stoffwechselprofilen. Wir investieren in jede Fahrerin."
+        },
+        "technical": {
+          "title": "Technische Kompetenz von Anfang an",
+          "body": "Unser Gründer entwickelt und betreut die Software selbst. Daten-, Analyse- und Content-Infrastruktur, intern entwickelt zu null Kosten."
+        },
+        "vision": {
+          "title": "Moderne Sicht auf Radsport und Business",
+          "body": "Radsport funktioniert seit jeher als B2B-Netzwerk, und wir bauen das bewusst mit ein: Fahrerinnen werden nach Daten und Zahlen ausgewählt, nicht nach Beziehungen."
+        }
+      }
+    },
+    "engine": {
+      "eyebrow": "Der Motor",
+      "heading": "Drei Ebenen, die kontinuierlich laufen",
+      "items": {
+        "document": {
+          "title": "Eine Reise dokumentieren",
+          "body": "Fortlaufende Geschichte der Entwicklung von null zum Erfolg. Der Wert, an den sich deine Marke anhängt, und der Grund, warum Menschen wiederkommen."
+        },
+        "daily": {
+          "title": "Täglicher Content",
+          "body": "5–7 Reels/Posts/Stories pro Woche. Reichweite an der Spitze des Funnels, produziert zu nahezu keinen Zusatzkosten."
+        },
+        "channels": {
+          "title": "Kanäle der Fahrerinnen",
+          "body": "Jeder Fahrerinnenvertrag enthält Content-Verpflichtungen. Acht Verteilungspunkte, nicht nur einer."
+        }
+      },
+      "calloutStrong": "Wir bauen ein Profi-Radsportteam aus dem Nichts auf.",
+      "calloutBody": "Deine Marke ist von der ersten Saison an Teil der Geschichte. Diese Position kann später nicht mehr gekauft werden."
+    },
+    "package": {
+      "eyebrow": "Das Paket",
+      "heading": "Kein Logo. Ein messbares Medienpaket.",
+      "items": [
+        "Garantierte monatliche Impressions und Watchtime, an dich berichtet.",
+        "Das Produkt wird in den Content integriert, nicht nur draufgeklebt.",
+        "Der von uns produzierte Content gehört dir zur Nutzung.",
+        "Athletinnenzugang für deine eigenen Kampagnen.",
+        "Community-Events und Auftritte der Fahrerinnen.",
+        "Eine namentliche Position in einer Wachstumsgeschichte, die du intern ein Jahrzehnt lang erzählen kannst."
+      ],
+      "callout": "Wir vereinbaren vertraglich gelieferte Medienleistung, nicht erhoffte Reichweite."
+    },
+    "tiers": {
+      "eyebrow": "Partnerschaftsstufen",
+      "heading": "Drei Stufen. Eine Gründungsposition.",
+      "badgeOnlyOne": "Nur 1 verfügbar",
+      "enquire": "Anfragen",
+      "footerCaption": "Ein Gründungspartner. Für immer. Diese Position kann nicht erneut geschaffen werden.",
+      "rowLabels": {
+        "namingRights": "Namensrechte",
+        "jerseyPlacement": "Trikotplatzierung",
+        "contentSeries": "Content-Reihe",
+        "athleteDays": "Athletinnentage / Jahr",
+        "contentLicence": "Content-Lizenz"
+      },
+      "founding": {
+        "name": "Gründungspartner",
+        "commitment": "3 Jahre Laufzeit",
+        "slots": "1 Platz, unwiederbringlich",
+        "rows": {
+          "namingRights": "Ja",
+          "jerseyPlacement": "Primär",
+          "contentSeries": "Exklusiv",
+          "athleteDays": "6",
+          "contentLicence": "Vollständig"
+        }
+      },
+      "performance": {
+        "name": "Performance-Partner",
+        "commitment": "2 Jahre Laufzeit",
+        "slots": "3 Plätze",
+        "rows": {
+          "namingRights": "Nein",
+          "jerseyPlacement": "Sekundär",
+          "contentSeries": "Integriert",
+          "athleteDays": "3",
+          "contentLicence": "Vollständig"
+        }
+      },
+      "supplier": {
+        "name": "Offizieller Ausrüster",
+        "commitment": "Produktpartnerschaft",
+        "slots": "6 Plätze",
+        "rows": {
+          "namingRights": "Nein",
+          "jerseyPlacement": "Logo",
+          "contentSeries": "Erwähnungen",
+          "athleteDays": "1",
+          "contentLicence": "Eingeschränkt"
+        }
+      }
+    },
+    "measurement": {
+      "eyebrow": "Messung",
+      "heading": "Worauf du dich verlassen kannst",
+      "items": {
+        "monthly": {
+          "title": "Monatliches Reporting",
+          "body": "Impressions, Watchtime-Minuten, Engagement-Rate und Zielgruppen-Demografie, jeden Monat geliefert."
+        },
+        "benchmarked": {
+          "title": "Vergleichbarer Wert",
+          "body": "Earned-Media-Wert gemessen gegen äquivalente bezahlte Social-Media-Ausgaben."
+        },
+        "attribution": {
+          "title": "Direkte Zuordnung",
+          "body": "Nachverfolgbare Links und Rabattcodes, damit Umsatz nachgewiesen und nicht geschätzt wird."
+        },
+        "targets": {
+          "title": "Vertraglich fixierte Ziele",
+          "body": "Medienziele werden im Vertrag festgehalten. Quartalsweise Überprüfung."
+        }
+      },
+      "calloutStrong": "Das erste Jahr ist an unser Risiko gepreist, nicht an deins.",
+      "calloutBody": "Wir nehmen im ersten Jahr eine reduzierte Gebühr, die nur bei erreichten Kennzahlen steigt. Verfehlen wir die Zahlen, zahlst du weniger."
+    },
+    "people": {
+      "eyebrow": "Das Team dahinter",
+      "heading": "Wer das aufbaut",
+      "footerCaption": "Sponsoren finanzieren zuerst Menschen, dann Pläne.",
+      "kg": {
+        "role": "Team Principal",
+        "bio": ""
+      },
+      "ss": {
+        "role": "Director of Strategic Partnerships",
+        "bio": ""
+      },
+      "jw": {
+        "role": "Finance Director",
+        "bio": ""
+      }
+    },
+    "closing": {
+      "headingLine1": "2032 startet dieses Team",
+      "headingLine2": "bei einem Rennen der Women's WorldTour.",
+      "subtitle": "Die einzige Frage ist, wessen Name auf dem Trikot steht."
+    }
+  },
+  "contacts": {
+    "heading": "Kontakt",
+    "intro": "Kontaktiere das Prolog-Cycling-Team.",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "address": "Adresse",
+    "addressTbd": "Folgt"
+  },
+  "notFound": {
+    "heading": "404",
+    "text": "Seite nicht gefunden.",
+    "backHome": "Zurück zur Startseite"
+  }
+}

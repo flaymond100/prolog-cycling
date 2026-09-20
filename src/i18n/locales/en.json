@@ -1,0 +1,314 @@
+{
+  "nav": {
+    "home": "Home",
+    "joinTeam": "Join the Team",
+    "partners": "Partner With Us",
+    "contacts": "Contacts",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "contactUs": "Contact us",
+    "brandAriaLabel": "Prolog Cycling home"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "languageSwitcher": {
+    "label": "Language"
+  },
+  "seo": {
+    "home": {
+      "title": "Prolog Cycling",
+      "description": "Prolog Cycling is a women's competitive cycling team recruiting riders of every level. Join the team and race with us this season."
+    },
+    "partners": {
+      "title": "Partner With Us",
+      "description": "Partner with Prolog Cycling: our roadmap from club team to the Women's WorldTour, 2027–2032, the opportunity, and how to become a founding partner."
+    },
+    "contacts": {
+      "title": "Contact Us",
+      "description": "Get in touch with Prolog Cycling, a women's competitive cycling team."
+    },
+    "notFound": {
+      "title": "Page Not Found",
+      "description": "The page you're looking for doesn't exist."
+    }
+  },
+  "home": {
+    "hiddenTitle": "Prolog Cycling | Women's Competitive Cycling Team",
+    "heroText": "We're a new name in the women's peloton, built differently from day one.",
+    "joinTeam": "Join the team",
+    "whatWeAreKicker": "What We Are",
+    "raisingLevel": "Raising the level of women's cycling.",
+    "mediaText": "Prolog Cycling exists to push women's cycling forward, not by doing things the traditional way, but by rethinking how a team is built.",
+    "mission": {
+      "developmentFirst": {
+        "title": "Development First",
+        "body": "We're here to grow the sport itself: more riders, more opportunity, more depth in the women's peloton."
+      },
+      "dataOverGuesswork": {
+        "title": "Data Over Guesswork",
+        "body": "Individual training plans, testing, and metabolic profiling. Every rider's progress is measured, not assumed."
+      },
+      "differentStructure": {
+        "title": "A Different Structure",
+        "body": "Riders selected on data and numbers, not connections. A team built around the people racing, not around hierarchy."
+      }
+    },
+    "roadmapKicker": "The Roadmap",
+    "roadmapHeading": "Six years. One breakaway.",
+    "roadmapIntro": "We've mapped the road from first race to the Women's WorldTour, 2027 to 2032. No shortcuts, no guesswork: here's exactly how we get there.",
+    "roadmapHint": "Tap a step to see more.",
+    "weAreHere": "We are here",
+    "partnerWithUs": "Partner With Us",
+    "roadmap": {
+      "2027": {
+        "stage": "Club Team",
+        "points": ["Building foundation of the team", "Races accross Germany on different levels"],
+        "detail": "We start as an amateur club team, racing locally while documenting every step, building an audience and a training system before we ever chase a UCI licence."
+      },
+      "2028": {
+        "stage": "Frauen-Bundesliga",
+        "points": ["National results", "First title partner"],
+        "detail": "Stepping up to Germany's national league. Real competition, real results, and the first commercial partner riding alongside us."
+      },
+      "2029": {
+        "stage": "UCI Continental",
+        "points": ["Full UCI race calendar", "Entry into the UCI system"],
+        "detail": "Registering as a UCI Continental team opens the door to the international calendar. This is where we formally enter professional cycling's structure."
+      },
+      "2030": {
+        "stage": "Elite Continental",
+        "points": ["First Women's WorldTour start"],
+        "detail": "A stronger roster and a full European racing programme, aimed squarely at a start in the Women's WorldTour."
+      },
+      "2032": {
+        "stage": "UCI ProTeam",
+        "points": ["WorldTour access route opens", "The breakaway becomes the peloton"],
+        "detail": "The destination: full ProTeam status and a start in the Women's WorldTour, proving the model works from zero."
+      }
+    }
+  },
+  "partners": {
+    "hero": {
+      "eyebrow": "Partner With Us",
+      "title": "Building Germany's most-watched women's racing team.",
+      "subtitle": "Our roadmap from club team to the Women's WorldTour, 2027 to 2032.",
+      "seeRoadmap": "See the roadmap",
+      "becomePartner": "Become a partner"
+    },
+    "opportunity": {
+      "eyebrow": "The Opportunity",
+      "heading": "The fastest-growing property in European sport",
+      "chartCaption": "Source: UCI 2026 team budget figures.",
+      "stats": {
+        "growth": "growth in 3 seasons",
+        "worldTeams": "WorldTeams exist worldwide",
+        "proTeams": "ProTeams exist worldwide"
+      }
+    },
+    "problem": {
+      "eyebrow": "The Problem",
+      "heading": "Reaching cycling audiences keeps getting more expensive",
+      "items": {
+        "paidSocial": {
+          "title": "Paid social costs more every year",
+          "body": "CPMs rise, campaigns end and you own nothing afterwards. The spend leaves no asset behind."
+        },
+        "passiveSponsorship": {
+          "title": "Traditional team sponsorship is passive",
+          "body": "A logo on a jersey is unmeasurable and undifferentiated. You are one of fifteen."
+        },
+        "topTier": {
+          "title": "The top tier is priced out of reach",
+          "body": "A men's WorldTour team costs €5–15m a year and still buys you a logo."
+        }
+      },
+      "callout": "You need attention, attribution and a story. A jersey logo delivers none of them."
+    },
+    "whatWeAre": {
+      "eyebrow": "What We Are",
+      "headingLine1": "A media company",
+      "headingLine2": "that races bikes.",
+      "body": "Every other team races first and hopes coverage follows. We invert it: we build the audience, and the audience funds the racing.",
+      "emphasis": "It is the business model.",
+      "statLabel": "of our first-year budget goes to content production",
+      "statNote": "No team at our level does this."
+    },
+    "roadmap": {
+      "eyebrow": "The Roadmap",
+      "heading": "Six years to the ProTeam tier",
+      "caption": "Continental registration in 2029 is the point at which we enter the UCI system. Everything before it is preparation; everything after it is progression.",
+      "steps": {
+        "2027": { "stage": "Club team", "detail": "1m video views. Foundation built in public." },
+        "2028": { "stage": "Frauen-Bundesliga", "detail": "National results. First title partner." },
+        "2029": { "stage": "UCI Continental", "detail": "Full UCI race calendar." },
+        "2030": { "stage": "Elite Continental", "detail": "First Women's WorldTour start." },
+        "2032": { "stage": "UCI ProTeam", "detail": "WorldTour access route opens." }
+      }
+    },
+    "whyUs": {
+      "eyebrow": "Why Us",
+      "heading": "Four things no other team at this level has",
+      "items": {
+        "audience": {
+          "title": "An audience before the first race",
+          "body": "Content production starts before racing does. The story is already being filmed."
+        },
+        "performance": {
+          "title": "In-house performance department",
+          "body": "Individual training plans with testing and metabolic profiling. We invest in every rider."
+        },
+        "technical": {
+          "title": "Technical capability built-in",
+          "body": "Our founder builds and maintains the software. Data, analytics and content infrastructure, developed in-house at zero cost."
+        },
+        "vision": {
+          "title": "Modern vision on cycling and business",
+          "body": "Cycling has always worked as a B2B network, and we build that in deliberately: riders selected on data and numbers, not connections."
+        }
+      }
+    },
+    "engine": {
+      "eyebrow": "The Engine",
+      "heading": "Three layers, running continuously",
+      "items": {
+        "document": {
+          "title": "Document a journey",
+          "body": "Ongoing story of development from zero to hero. The asset your brand attaches to, and the reason people come back."
+        },
+        "daily": {
+          "title": "Daily content",
+          "body": "5–7 Reels/Posts/Stories per week. Reach at the top of the funnel, produced at near-zero marginal cost."
+        },
+        "channels": {
+          "title": "Rider channels",
+          "body": "Every rider contract includes content obligations. Eight distribution points, not one."
+        }
+      },
+      "calloutStrong": "Building a professional cycling team from nothing.",
+      "calloutBody": "Your brand is in the story from season one. That position cannot be bought later."
+    },
+    "package": {
+      "eyebrow": "The Package",
+      "heading": "Not a logo. A measurable media package.",
+      "items": [
+        "Guaranteed monthly impressions and watch-time, reported to you.",
+        "Product integrated into content, not pasted onto it.",
+        "Content we produce is yours to use.",
+        "Athlete access for your own campaigns.",
+        "Community events and rider appearances.",
+        "A named position in a growth story you can tell internally for a decade."
+      ],
+      "callout": "We contract on media delivered, not on exposure hoped for."
+    },
+    "tiers": {
+      "eyebrow": "Partnership Tiers",
+      "heading": "Three levels. One founding position.",
+      "badgeOnlyOne": "Only 1 available",
+      "enquire": "Enquire",
+      "footerCaption": "One founding partner. Ever. The position cannot be created again.",
+      "rowLabels": {
+        "namingRights": "Naming rights",
+        "jerseyPlacement": "Jersey placement",
+        "contentSeries": "Content series",
+        "athleteDays": "Athlete days / year",
+        "contentLicence": "Content licence"
+      },
+      "founding": {
+        "name": "Founding Partner",
+        "commitment": "3-year commitment",
+        "slots": "1 slot, ever",
+        "rows": {
+          "namingRights": "Yes",
+          "jerseyPlacement": "Primary",
+          "contentSeries": "Dedicated",
+          "athleteDays": "6",
+          "contentLicence": "Full"
+        }
+      },
+      "performance": {
+        "name": "Performance Partner",
+        "commitment": "2-year commitment",
+        "slots": "3 slots",
+        "rows": {
+          "namingRights": "None",
+          "jerseyPlacement": "Secondary",
+          "contentSeries": "Integrated",
+          "athleteDays": "3",
+          "contentLicence": "Full"
+        }
+      },
+      "supplier": {
+        "name": "Official Supplier",
+        "commitment": "Product partnership",
+        "slots": "6 slots",
+        "rows": {
+          "namingRights": "None",
+          "jerseyPlacement": "Logo",
+          "contentSeries": "Mentions",
+          "athleteDays": "1",
+          "contentLicence": "Limited"
+        }
+      }
+    },
+    "measurement": {
+      "eyebrow": "Measurement",
+      "heading": "What you sign off on",
+      "items": {
+        "monthly": {
+          "title": "Monthly reporting",
+          "body": "Impressions, watch-time minutes, engagement rate and audience demographics, delivered every month."
+        },
+        "benchmarked": {
+          "title": "Benchmarked value",
+          "body": "Earned media value measured against equivalent paid social spend."
+        },
+        "attribution": {
+          "title": "Direct attribution",
+          "body": "Trackable links and discount codes so revenue can be traced, not estimated."
+        },
+        "targets": {
+          "title": "Contracted targets",
+          "body": "Media targets written into the agreement. Quarterly review."
+        }
+      },
+      "calloutStrong": "Year one is priced on risk we carry, not risk you carry.",
+      "calloutBody": "We take a reduced fee in year one, escalating only against delivered metrics. If we miss the numbers, you pay less."
+    },
+    "people": {
+      "eyebrow": "The People",
+      "heading": "Who is building this",
+      "footerCaption": "Sponsors fund people before they fund plans.",
+      "kg": {
+        "role": "Team Principal",
+        "bio": ""
+      },
+      "ss": {
+        "role": "Director of Strategic Partnerships",
+        "bio": ""
+      },
+      "jw": {
+        "role": "Finance Director",
+        "bio": ""
+      }
+    },
+    "closing": {
+      "headingLine1": "In 2032 this team will start",
+      "headingLine2": "a Women's WorldTour race.",
+      "subtitle": "The only question is whose name is on the jersey."
+    }
+  },
+  "contacts": {
+    "heading": "Contacts",
+    "intro": "Get in touch with the Prolog Cycling team.",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "addressTbd": "TBD"
+  },
+  "notFound": {
+    "heading": "404",
+    "text": "Page not found.",
+    "backHome": "Back to home"
+  }
+}

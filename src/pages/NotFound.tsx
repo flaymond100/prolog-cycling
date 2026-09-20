@@ -1,13 +1,17 @@
 import { Link } from 'react-router-dom'
+import { useLangT } from '../i18n/useLangT'
+import { localizedPath } from '../i18n/routing'
 import Seo from '../components/Seo'
 
 function NotFound() {
+  const { t, lang } = useLangT()
+
   return (
     <section className="page page-not-found">
-      <Seo title="Page Not Found" description="The page you're looking for doesn't exist." noindex />
-      <h1>404</h1>
-      <p>Page not found.</p>
-      <Link to="/">Back to home</Link>
+      <Seo title={t('seo.notFound.title')} description={t('seo.notFound.description')} lang={lang} noindex />
+      <h1>{t('notFound.heading')}</h1>
+      <p>{t('notFound.text')}</p>
+      <Link to={localizedPath(lang, '/')}>{t('notFound.backHome')}</Link>
     </section>
   )
 }
