@@ -11,6 +11,12 @@ const JOIN_FORM_URL =
 
 const MISSION_IDS = ['developmentFirst', 'dataOverGuesswork', 'differentStructure'] as const
 
+const INSTAGRAM_URL = 'https://www.instagram.com/prologcycling/'
+
+// From behold.so — connect @prologcycling there, create a 6-post feed, and
+// swap this for the feed ID it gives you (Home is the only place it's used).
+const BEHOLD_FEED_ID = 'FsioMwXSYgqlkWABzfyU'
+
 const ROADMAP: { year: string; current?: boolean; final?: boolean }[] = [
   { year: '2027', current: true },
   { year: '2028' },
@@ -115,6 +121,20 @@ function Home() {
         <Link to={localizedPath(lang, '/partners')} className="cta-button">
           {t('home.partnerWithUs')} <span className="cta-arrow" aria-hidden="true">&rarr;</span>
         </Link>
+      </div>
+
+      <div className="home-block home-block--center home-instagram scroll-fade">
+        <span className="kicker-tag">{t('home.instagramKicker')}</span>
+        <h2>{t('home.instagramHeading')}</h2>
+        <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="instagram-link">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+          </svg>
+          @prologcycling
+        </a>
+        <behold-widget feed-id={BEHOLD_FEED_ID} />
       </div>
 
       {/* <div className="home-block join-cta scroll-fade">
