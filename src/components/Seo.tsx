@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom'
 import { SUPPORTED_LANGUAGES, type SupportedLanguage } from '../i18n/config'
 import { localizedPath, stripLangPrefix } from '../i18n/routing'
 
-const SITE_NAME = 'Prolog Cycling'
+const SITE_NAME = 'PROLOG Cycling'
 const SITE_URL = 'https://prolog-cycling.com'
 
 const OG_LOCALES: Record<SupportedLanguage, string> = {

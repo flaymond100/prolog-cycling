@@ -1,5 +1,7 @@
 import type { CSSProperties } from 'react'
+import { Link } from 'react-router-dom'
 import { useLangT } from '../i18n/useLangT'
+import { localizedPath } from '../i18n/routing'
 import Seo from '../components/Seo'
 import Reveal from '../components/Reveal'
 import Counter from '../components/Counter'
@@ -71,9 +73,9 @@ function Partners() {
             <a href="#roadmap" className="pp-button pp-button--ghost">
               {t('partners.hero.seeRoadmap')}
             </a>
-            <a href={MAILTO} className="pp-button pp-button--gold">
+            <Link to={localizedPath(lang, '/contacts')} className="pp-button pp-button--gold">
               {t('partners.hero.becomePartner')} <span aria-hidden="true">&rarr;</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

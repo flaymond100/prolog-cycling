@@ -1,5 +1,6 @@
 import { useLangT } from '../i18n/useLangT'
 import Seo from '../components/Seo'
+import ContactForm from '../components/ContactForm'
 
 function Contacts() {
   const { t, lang } = useLangT()
@@ -20,6 +21,9 @@ function Contacts() {
           {t('contacts.address')}: {t('contacts.addressTbd')}
         </li>
       </ul>
+
+      <h2 className="contact-form-heading">{t('contacts.form.heading')}</h2>
+      <ContactForm />
     </section>
   )
 }

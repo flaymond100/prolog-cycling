@@ -7,7 +7,7 @@
     "openMenu": "Menü öffnen",
     "closeMenu": "Menü schließen",
     "contactUs": "Kontaktiere uns",
-    "brandAriaLabel": "Prolog Cycling Startseite"
+    "brandAriaLabel": "PROLOG Cycling Startseite"
   },
   "footer": {
     "rights": "Alle Rechte vorbehalten."
@@ -17,16 +17,16 @@
   },
   "seo": {
     "home": {
-      "title": "Prolog Cycling",
-      "description": "Prolog Cycling ist ein Frauen-Radsportteam, das Fahrerinnen jeden Levels sucht. Werde Teil des Teams und fahre diese Saison mit uns."
+      "title": "PROLOG Cycling",
+      "description": "PROLOG Cycling ist ein Frauen-Radsportteam, das Fahrerinnen jeden Levels sucht. Werde Teil des Teams und fahre diese Saison mit uns."
     },
     "partners": {
       "title": "Partner werden",
-      "description": "Werde Partner von Prolog Cycling: unser Fahrplan vom Clubteam zur Women's WorldTour, 2027–2032, die Chance dahinter und wie du Gründungspartner wirst."
+      "description": "Werde Partner von PROLOG Cycling: unser Roadmap vom Clubteam zur Women's WorldTour, 2027–2032, die Chance dahinter und wie du Gründungspartner wirst."
     },
     "contacts": {
       "title": "Kontakt",
-      "description": "Kontaktiere Prolog Cycling, ein Frauen-Radsportteam im Leistungssport."
+      "description": "Kontaktiere PROLOG Cycling, ein Frauen-Radsportteam im Leistungssport."
     },
     "notFound": {
       "title": "Seite nicht gefunden",
@@ -34,12 +34,12 @@
     }
   },
   "home": {
-    "hiddenTitle": "Prolog Cycling | Frauen-Radsportteam im Leistungssport",
+    "hiddenTitle": "PROLOG Cycling | Frauen-Radsportteam im Leistungssport",
     "heroText": "Wir sind ein neuer Name im Frauenpeloton, von Anfang an anders aufgebaut.",
     "joinTeam": "Join Team",
     "whatWeAreKicker": "Wer wir sind",
     "raisingLevel": "Wir heben das Niveau im Frauenradsport.",
-    "mediaText": "Prolog Cycling will den Frauenradsport voranbringen, nicht auf dem traditionellen Weg, sondern indem wir neu denken, wie ein Team aufgebaut wird.",
+    "mediaText": "PROLOG Cycling will den Frauenradsport voranbringen, nicht auf dem traditionellen Weg, sondern indem wir neu denken, wie ein Team aufgebaut wird.",
     "mission": {
       "developmentFirst": {
         "title": "Förderung zuerst",
@@ -54,7 +54,7 @@
         "body": "Fahrerinnen werden nach Daten und Zahlen ausgewählt, nicht nach Beziehungen. Ein Team, das um die Athletinnen herum gebaut ist, nicht um Hierarchien."
       }
     },
-    "roadmapKicker": "Der Fahrplan",
+    "roadmapKicker": "Der Roadmap",
     "roadmapHeading": "Sechs Jahre. Eine Ausreiße.",
     "roadmapIntro": "Wir haben den Weg vom ersten Rennen bis zur Women's WorldTour kartiert, 2027 bis 2032. Keine Abkürzungen, kein Ratespiel: So kommen wir genau dorthin.",
     "roadmapHint": "Tippe auf einen Schritt für mehr Details.",
@@ -62,6 +62,9 @@
     "partnerWithUs": "Partner werden",
     "instagramKicker": "Folge uns",
     "instagramHeading": "Folge uns auf Instagram",
+    "contactKicker": "Kontakt",
+    "contactHeading": "Eine Frage, oder möchtest du Partner werden?",
+    "contactIntro": "Schreib uns eine Nachricht und wir melden uns bei dir.",
     "roadmap": {
       "2027": {
         "stage": "Clubteam",
@@ -94,8 +97,8 @@
     "hero": {
       "eyebrow": "Partner werden",
       "title": "Wir bauen Deutschlands meistgesehenes Frauen-Radsportteam auf.",
-      "subtitle": "Unser Fahrplan vom Clubteam zur Women's WorldTour, 2027 bis 2032.",
-      "seeRoadmap": "Fahrplan ansehen",
+      "subtitle": "Unser Roadmap vom Clubteam zur Women's WorldTour, 2027 bis 2032.",
+      "seeRoadmap": "Roadmap ansehen",
       "becomePartner": "Partner werden"
     },
     "opportunity": {
@@ -137,11 +140,11 @@
       "statNote": "Kein Team auf unserem Niveau macht das."
     },
     "roadmap": {
-      "eyebrow": "Der Fahrplan",
+      "eyebrow": "Der Roadmap",
       "heading": "Sechs Jahre bis zur ProTeam-Stufe",
       "caption": "Die Continental-Registrierung 2029 ist der Punkt, an dem wir in das UCI-System eintreten. Alles davor ist Vorbereitung, alles danach ist Fortschritt.",
       "steps": {
-        "2027": { "stage": "Clubteam", "detail": "1 Mio. Videoaufrufe. Fundament öffentlich aufgebaut." },
+        "2027": { "stage": "Clubteam", "detail": "10.000 Follower auf Instagram. Fundament öffentlich aufgebaut." },
         "2028": { "stage": "Frauen-Bundesliga", "detail": "Nationale Ergebnisse. Erster Titelpartner." },
         "2029": { "stage": "UCI Continental", "detail": "Voller UCI-Rennkalender." },
         "2030": { "stage": "Elite Continental", "detail": "Erster Start bei der Women's WorldTour." },
@@ -302,11 +305,26 @@
   },
   "contacts": {
     "heading": "Kontakt",
-    "intro": "Kontaktiere das Prolog Cycling Team.",
+    "intro": "Kontaktiere das PROLOG Cycling Team.",
     "email": "E-Mail",
     "phone": "Telefon",
     "address": "Adresse",
-    "addressTbd": "Leipzig, Deutschland"
+    "addressTbd": "Leipzig, Deutschland",
+    "form": {
+      "heading": "Schreib uns eine Nachricht",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "email": "E-Mail",
+      "phone": "Telefon (optional)",
+      "subject": "Betreff",
+      "message": "Nachricht",
+      "captchaLabel": "Kurzer Check: Was ist {{a}} + {{b}}?",
+      "captchaError": "Diese Antwort scheint nicht zu stimmen — bitte versuche die neue Aufgabe unten.",
+      "submit": "Nachricht senden",
+      "submitting": "Wird gesendet…",
+      "success": "Danke — deine Nachricht wurde gesendet. Wir melden uns bald bei dir.",
+      "error": "Beim Senden ist etwas schiefgelaufen. Bitte versuche es erneut oder schreibe uns direkt eine E-Mail."
+    }
   },
   "notFound": {
     "heading": "404",

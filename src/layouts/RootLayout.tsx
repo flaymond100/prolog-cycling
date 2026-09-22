@@ -129,7 +129,7 @@ function RootLayout({ lang }: RootLayoutProps) {
       </main>
 
       <footer className="site-footer">
-        <p>&copy; {new Date().getFullYear()} Prolog Cycling. {t('footer.rights')}</p>
+        <p>&copy; {new Date().getFullYear()} PROLOG Cycling. {t('footer.rights')}</p>
       </footer>
     </div>
   )

@@ -7,7 +7,7 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "contactUs": "Contact us",
-    "brandAriaLabel": "Prolog Cycling home"
+    "brandAriaLabel": "PROLOG Cycling home"
   },
   "footer": {
     "rights": "All rights reserved."
@@ -17,16 +17,16 @@
   },
   "seo": {
     "home": {
-      "title": "Prolog Cycling",
-      "description": "Prolog Cycling is a women's competitive cycling team recruiting riders of every level. Join the team and race with us this season."
+      "title": "PROLOG Cycling",
+      "description": "PROLOG Cycling is a women's competitive cycling team recruiting riders of every level. Join the team and race with us this season."
     },
     "partners": {
       "title": "Partner With Us",
-      "description": "Partner with Prolog Cycling: our roadmap from club team to the Women's WorldTour, 2027–2032, the opportunity, and how to become a founding partner."
+      "description": "Partner with PROLOG Cycling: our roadmap from club team to the Women's WorldTour, 2027–2032, the opportunity, and how to become a founding partner."
     },
     "contacts": {
       "title": "Contact Us",
-      "description": "Get in touch with Prolog Cycling, a women's competitive cycling team."
+      "description": "Get in touch with PROLOG Cycling, a women's competitive cycling team."
     },
     "notFound": {
       "title": "Page Not Found",
@@ -34,12 +34,12 @@
     }
   },
   "home": {
-    "hiddenTitle": "Prolog Cycling | Women's Competitive Cycling Team",
+    "hiddenTitle": "PROLOG Cycling | Women's Competitive Cycling Team",
     "heroText": "We're a new name in the women's peloton, built differently from day one.",
     "joinTeam": "Join the team",
     "whatWeAreKicker": "What We Are",
     "raisingLevel": "Raising the level of women's cycling.",
-    "mediaText": "Prolog Cycling exists to push women's cycling forward, not by doing things the traditional way, but by rethinking how a team is built.",
+    "mediaText": "PROLOG Cycling exists to push women's cycling forward, not by doing things the traditional way, but by rethinking how a team is built.",
     "mission": {
       "developmentFirst": {
         "title": "Development First",
@@ -62,6 +62,9 @@
     "partnerWithUs": "Partner With Us",
     "instagramKicker": "Follow Us",
     "instagramHeading": "Follow us on Instagram",
+    "contactKicker": "Get In Touch",
+    "contactHeading": "Have a question, or want to partner with us?",
+    "contactIntro": "Send us a message and we'll get back to you.",
     "roadmap": {
       "2027": {
         "stage": "Club Team",
@@ -141,7 +144,7 @@
       "heading": "Six years to the ProTeam tier",
       "caption": "Continental registration in 2029 is the point at which we enter the UCI system. Everything before it is preparation; everything after it is progression.",
       "steps": {
-        "2027": { "stage": "Club team", "detail": "1m video views. Foundation built in public." },
+        "2027": { "stage": "Club team", "detail": "10.000 followers on Instagram. Foundation built in public." },
         "2028": { "stage": "Frauen-Bundesliga", "detail": "National results. First title partner." },
         "2029": { "stage": "UCI Continental", "detail": "Full UCI race calendar." },
         "2030": { "stage": "Elite Continental", "detail": "First Women's WorldTour start." },
@@ -302,11 +305,26 @@
   },
   "contacts": {
     "heading": "Contacts",
-    "intro": "Get in touch with the Prolog Cycling team.",
+    "intro": "Get in touch with the PROLOG Cycling team.",
     "email": "Email",
     "phone": "Phone",
     "address": "Address",
-    "addressTbd": "Leipzig, Germany"
+    "addressTbd": "Leipzig, Germany",
+    "form": {
+      "heading": "Send us a message",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "phone": "Phone (optional)",
+      "subject": "Subject",
+      "message": "Message",
+      "captchaLabel": "Quick check: what is {{a}} + {{b}}?",
+      "captchaError": "That answer doesn't look right — please try the new sum below.",
+      "submit": "Send message",
+      "submitting": "Sending…",
+      "success": "Thanks — your message has been sent. We'll get back to you soon.",
+      "error": "Something went wrong sending your message. Please try again or email us directly."
+    }
   },
   "notFound": {
     "heading": "404",

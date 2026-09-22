@@ -239,6 +239,11 @@
   width: fit-content;
 }
 
+.home-contact-form {
+  text-align: left;
+  margin-top: var(--space-6);
+}
+
 /* What We Are — full-bleed dark band. Home's root carries the shared
    `.page` class (max-width: 720px, centered), unlike the Partners page's own root,
    so a plain negative-margin cancel isn't enough here — break out to the

@@ -4,6 +4,7 @@ import { useLangT } from '../i18n/useLangT'
 import { localizedPath } from '../i18n/routing'
 import Seo from '../components/Seo'
 import Reveal from '../components/Reveal'
+import ContactForm from '../components/ContactForm'
 import './Home.css'
 
 const JOIN_FORM_URL =
@@ -135,6 +136,13 @@ function Home() {
           @prologcycling
         </a>
         <behold-widget feed-id={BEHOLD_FEED_ID} />
+      </div>
+
+      <div className="home-block home-block--center home-contact scroll-fade" id="contact">
+        <span className="kicker-tag">{t('home.contactKicker')}</span>
+        <h2>{t('home.contactHeading')}</h2>
+        <p>{t('home.contactIntro')}</p>
+        <ContactForm className="home-contact-form" />
       </div>
 
       {/* <div className="home-block join-cta scroll-fade">
