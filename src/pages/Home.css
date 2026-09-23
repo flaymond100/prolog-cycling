@@ -310,6 +310,67 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* Full-bleed, like .home-media-block above — the team's photos need more
+   room than the page's 720px reading column gives them. */
+.home-team {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  padding: var(--space-8) var(--space-7);
+  text-align: center;
+  border-top: none;
+  box-sizing: border-box;
+}
+
+.home-team .kicker-tag {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-team h2 {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  max-width: 1100px;
+  margin: var(--space-8) auto 0;
+}
+
+.home-person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-person-avatar {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--color-border-strong);
+  object-fit: cover;
+  margin-bottom: var(--space-4);
+}
+
+.home-person h3 {
+  font: 600 22px var(--font-body);
+  color: var(--color-ink);
+  margin: 0 0 var(--space-1);
+}
+
+.home-person-role {
+  display: block;
+  font: var(--text-eyebrow);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+
 .roadmap-teaser {
   max-width: 720px;
 }
@@ -594,11 +655,19 @@ behold-widget {
 }
 
 @media (max-width: 640px) {
-  .home-media-block {
+  .home-media-block,
+  .home-team {
     padding: var(--space-7) var(--space-4);
   }
 
   .home-mission-grid {
     grid-template-columns: 1fr;
+  }
+
+  .home-team-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

@@ -5,6 +5,7 @@ import { localizedPath } from '../i18n/routing'
 import Seo from '../components/Seo'
 import Reveal from '../components/Reveal'
 import ContactForm from '../components/ContactForm'
+import { PEOPLE } from '../data/people'
 import './Home.css'
 
 const JOIN_FORM_URL =
@@ -60,6 +61,24 @@ function Home() {
             <Reveal key={id} delay={i * 100} className="home-mission-item">
               <h3>{t(`home.mission.${id}.title`)}</h3>
               <p>{t(`home.mission.${id}.body`)}</p>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+
+      <div className="home-block home-team scroll-fade">
+        <span className="kicker-tag">{t('home.teamKicker')}</span>
+        <h2>{t('home.teamHeading')}</h2>
+        <div className="home-team-grid">
+          {PEOPLE.map((person, i) => (
+            <Reveal key={person.id} delay={i * 100} className="home-person">
+              <img
+                className="home-person-avatar"
+                src={`${import.meta.env.BASE_URL}${person.photo}`}
+                alt={person.name}
+              />
+              <h3>{person.name}</h3>
+              <span className="home-person-role">{t(`partners.people.${person.id}.role`)}</span>
             </Reveal>
           ))}
         </div>

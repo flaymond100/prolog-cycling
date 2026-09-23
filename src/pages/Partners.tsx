@@ -5,6 +5,7 @@ import { localizedPath } from '../i18n/routing'
 import Seo from '../components/Seo'
 import Reveal from '../components/Reveal'
 import Counter from '../components/Counter'
+import { PEOPLE } from '../data/people'
 import './Partners.css'
 
 const CONTACT_EMAIL = 'info@prolog-cycling.com'
@@ -48,12 +49,6 @@ const TIERS: { id: string; highlight?: boolean }[] = [
 ]
 
 const MEASUREMENT_IDS = ['monthly', 'benchmarked', 'attribution', 'targets'] as const
-
-const PEOPLE = [
-  { id: 'ss', photo: 'Simon.webp', name: 'Simon Schulz' },
-  { id: 'kg', photo: 'Kosta.webp', name: 'Kostiantyn Garbar' },
-  { id: 'jw', photo: 'Jan.webp', name: 'Jan Wagebach' },
-] as const
 
 function Partners() {
   const { t, lang } = useLangT()
