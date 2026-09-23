@@ -1,16 +1,23 @@
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import RootLayout from './layouts/RootLayout'
 import Home from './pages/Home'
 import Partners from './pages/Partners'
 import Contacts from './pages/Contacts'
 import NotFound from './pages/NotFound'
 import type { SupportedLanguage } from './i18n/config'
-import { localizedPath } from './i18n/routing'
+import { localizedPath, stripLangPrefix } from './i18n/routing'
 
-/** Bare "/" (and legacy unprefixed page links) always default to English —
- *  an explicit /en or /de link is the only thing that picks German. */
+/** Bare "/" (and legacy unprefixed page links) always default to English. */
 function LanguageRedirect({ path }: { path: string }) {
   return <Navigate to={localizedPath('en', path)} replace />
+}
+
+/** English is the only language the site exposes now — any /de link
+ *  (old bookmarks, indexed search results) redirects to its /en equivalent
+ *  rather than serving German. */
+function GermanRedirect() {
+  const { pathname } = useLocation()
+  return <Navigate to={localizedPath('en', stripLangPrefix(pathname))} replace />
 }
 
 function languageRoutes(lang: SupportedLanguage) {
@@ -32,7 +39,8 @@ function App() {
       <Route path="/contacts" element={<LanguageRedirect path="/contacts" />} />
 
       {languageRoutes('en')}
-      {languageRoutes('de')}
+      <Route path="/de" element={<GermanRedirect />} />
+      <Route path="/de/*" element={<GermanRedirect />} />
 
       <Route element={<RootLayout lang="en" />}>
         <Route path="*" element={<NotFound />} />

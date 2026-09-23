@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import i18n, { type SupportedLanguage } from '../i18n/config'
 import { localizedPath } from '../i18n/routing'
-import LanguageSwitcher from '../components/LanguageSwitcher'
 import './RootLayout.css'
 
 declare global {
@@ -88,7 +87,6 @@ function RootLayout({ lang }: RootLayoutProps) {
           </div>
 
           <div className="header-right">
-            <LanguageSwitcher lang={lang} />
             <NavLink
               to={localizedPath(lang, '/contacts')}
               className="icon-box contact-box"

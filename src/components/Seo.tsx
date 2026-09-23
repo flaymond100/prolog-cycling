@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { SUPPORTED_LANGUAGES, type SupportedLanguage } from '../i18n/config'
+import type { SupportedLanguage } from '../i18n/config'
 import { localizedPath, stripLangPrefix } from '../i18n/routing'
 
 const SITE_NAME = 'PROLOG Cycling'
@@ -65,11 +65,9 @@ function Seo({ title, description, lang, noindex = false }: SeoProps) {
     setMetaTag('property', 'og:locale', OG_LOCALES[lang])
 
     setLinkTag('canonical', url)
-    // Tell crawlers this page has equivalent versions at the other language
-    // URLs, so /en and /de aren't treated as duplicate content.
-    SUPPORTED_LANGUAGES.forEach((code) => {
-      setLinkTag('alternate', `${SITE_URL}${localizedPath(code, unlocalizedPath)}`, code)
-    })
+    // English is the only language the site serves — self-referencing
+    // hreflang plus x-default, per Google's guidance for single-language sites.
+    setLinkTag('alternate', `${SITE_URL}${localizedPath('en', unlocalizedPath)}`, 'en')
     setLinkTag('alternate', `${SITE_URL}${localizedPath('en', unlocalizedPath)}`, 'x-default')
   }, [title, description, lang, noindex, pathname])
 
