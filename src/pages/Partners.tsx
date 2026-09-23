@@ -50,9 +50,9 @@ const TIERS: { id: string; highlight?: boolean }[] = [
 const MEASUREMENT_IDS = ['monthly', 'benchmarked', 'attribution', 'targets'] as const
 
 const PEOPLE = [
-  { id: 'kg', initials: 'KG', name: 'Kostiantyn Garbar' },
-  { id: 'ss', initials: 'SS', name: 'Simon Schulz' },
-  { id: 'jw', initials: 'JW', name: 'Jan Wagebach' },
+  { id: 'ss', photo: 'Simon.webp', name: 'Simon Schulz' },
+  { id: 'kg', photo: 'Kosta.webp', name: 'Kostiantyn Garbar' },
+  { id: 'jw', photo: 'Jan.webp', name: 'Jan Wagebach' },
 ] as const
 
 function Partners() {
@@ -341,7 +341,11 @@ function Partners() {
           <div className="pp-grid-3">
             {PEOPLE.map((person, i) => (
               <Reveal key={person.id} delay={i * 100} className="pp-person">
-                <span className="pp-person-avatar">{person.initials}</span>
+                <img
+                  className="pp-person-avatar"
+                  src={`${import.meta.env.BASE_URL}${person.photo}`}
+                  alt={person.name}
+                />
                 <h3>{person.name}</h3>
                 <span className="pp-person-role">{t(`partners.people.${person.id}.role`)}</span>
                 <p>{t(`partners.people.${person.id}.bio`)}</p>
