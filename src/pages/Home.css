@@ -36,11 +36,10 @@
   width: 100%;
 }
 
-/* The logo artwork has margin baked in (it's a centered lockup on a
-   2000x2000 canvas) — scale + recenter to crop that margin out, so the
-   mark reads at full size in the hero. */
+/* The SVG's viewBox is cropped tight to the artwork, so the width here is
+   the lockup's real width — capped so it doesn't swamp wide screens. */
 .hero-logo {
-  width: 80%;
+  width: min(80%, 480px);
   overflow: hidden;
   position: relative;
   margin: 14px;
