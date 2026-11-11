@@ -309,6 +309,29 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* Latest News — full-bleed like .home-team below, so three cards fit side
+   by side. The cards and their grid are styled in NewsCard.css. */
+.home-news {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  padding: var(--space-8) var(--space-7);
+  text-align: center;
+  border-top: none;
+  box-sizing: border-box;
+}
+
+.home-news .kicker-tag {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-news-grid {
+  max-width: 1160px;
+  margin: var(--space-7) auto 0;
+}
+
 /* Full-bleed, like .home-media-block above — the team's photos need more
    room than the page's 720px reading column gives them. */
 .home-team {
@@ -655,6 +678,7 @@ behold-widget {
 
 @media (max-width: 640px) {
   .home-media-block,
+  .home-news,
   .home-team {
     padding: var(--space-7) var(--space-4);
   }

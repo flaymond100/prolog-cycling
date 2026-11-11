@@ -1,0 +1,110 @@
+/* Cards size themselves; the grid they sit in (Home's teaser, the /news
+   list) only has to place them. */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 360px));
+  justify-content: center;
+  gap: var(--space-6);
+  text-align: left;
+}
+
+.news-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 2px solid var(--color-border-strong);
+  background: var(--color-white);
+  color: var(--color-ink-muted);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-card:hover {
+  color: var(--color-ink-muted);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.news-card:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 4px;
+}
+
+.news-card-media {
+  aspect-ratio: 16 / 9;
+  border-bottom: 2px solid var(--color-border-strong);
+  overflow: hidden;
+}
+
+.news-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-card-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: var(--space-4);
+  box-sizing: border-box;
+  background: var(--color-espresso);
+  color: var(--color-gold);
+  font: italic 400 22px/1.1 var(--font-display);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.news-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--space-5);
+}
+
+.news-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-3);
+  font: var(--text-eyebrow);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+
+.news-card-category {
+  color: var(--color-ink);
+}
+
+.news-card-title {
+  margin: 0 0 var(--space-2);
+  font: 600 22px/1.25 var(--font-body);
+  color: var(--color-ink);
+}
+
+.news-card-summary {
+  margin: 0 0 var(--space-4);
+  font: 400 16px/1.5 var(--font-body);
+}
+
+.news-card-more {
+  margin-top: auto;
+  font: 600 14px var(--font-body);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .news-card {
+    transition: none;
+  }
+
+  .news-card:hover {
+    transform: none;
+  }
+}

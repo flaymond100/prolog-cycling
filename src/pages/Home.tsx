@@ -5,7 +5,9 @@ import { localizedPath } from '../i18n/routing'
 import Seo from '../components/Seo'
 import Reveal from '../components/Reveal'
 import ContactForm from '../components/ContactForm'
+import NewsCard from '../components/NewsCard'
 import { PEOPLE } from '../data/people'
+import { NEWS } from '../data/news'
 import './Home.css'
 
 const JOIN_FORM_URL =
@@ -30,6 +32,7 @@ const ROADMAP: { year: string; current?: boolean; final?: boolean }[] = [
 function Home() {
   const { t, lang } = useLangT()
   const [openStep, setOpenStep] = useState<string | null>('2027')
+  const latestNews = NEWS.slice(0, 3)
 
   return (
     <section className="page page-home">
@@ -65,6 +68,24 @@ function Home() {
           ))}
         </div>
       </div>
+
+      {/* Hidden entirely while there are no posts in src/content/news/. */}
+      {latestNews.length > 0 && (
+        <div className="home-block home-news scroll-fade">
+          <span className="kicker-tag">{t('home.newsKicker')}</span>
+          <h2>{t('home.newsHeading')}</h2>
+          <div className="news-grid home-news-grid">
+            {latestNews.map((post, i) => (
+              <Reveal key={post.slug} delay={i * 100}>
+                <NewsCard post={post} lang={lang} readMoreLabel={t('news.readMore')} />
+              </Reveal>
+            ))}
+          </div>
+          <Link to={localizedPath(lang, '/news')} className="cta-button">
+            {t('home.seeAllNews')} <span className="cta-arrow" aria-hidden="true">&rarr;</span>
+          </Link>
+        </div>
+      )}
 
       <div className="home-block home-team scroll-fade">
         <span className="kicker-tag">{t('home.teamKicker')}</span>

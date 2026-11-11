@@ -2,6 +2,8 @@ import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import RootLayout from './layouts/RootLayout'
 import Home from './pages/Home'
 import Partners from './pages/Partners'
+import News from './pages/News'
+import NewsArticle from './pages/NewsArticle'
 import Contacts from './pages/Contacts'
 import NotFound from './pages/NotFound'
 import type { SupportedLanguage } from './i18n/config'
@@ -25,6 +27,8 @@ function languageRoutes(lang: SupportedLanguage) {
     <Route path={`/${lang}`} element={<RootLayout lang={lang} />}>
       <Route index element={<Home />} />
       <Route path="partners" element={<Partners />} />
+      <Route path="news" element={<News />} />
+      <Route path="news/:slug" element={<NewsArticle />} />
       <Route path="contacts" element={<Contacts />} />
       <Route path="*" element={<NotFound />} />
     </Route>
@@ -37,6 +41,7 @@ function App() {
       <Route path="/" element={<LanguageRedirect path="/" />} />
       <Route path="/partners" element={<LanguageRedirect path="/partners" />} />
       <Route path="/contacts" element={<LanguageRedirect path="/contacts" />} />
+      <Route path="/news" element={<LanguageRedirect path="/news" />} />
 
       {languageRoutes('en')}
       <Route path="/de" element={<GermanRedirect />} />

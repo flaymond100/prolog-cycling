@@ -114,6 +114,9 @@ function RootLayout({ lang }: RootLayoutProps) {
         >
           {t('nav.joinTeam')}
         </a>
+        <NavLink to={localizedPath(lang, '/news')} className={linkClass} onClick={closeMenu}>
+          {t('nav.news')}
+        </NavLink>
         <NavLink to={localizedPath(lang, '/partners')} className={linkClass} onClick={closeMenu}>
           {t('nav.partners')}
         </NavLink>

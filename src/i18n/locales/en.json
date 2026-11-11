@@ -2,6 +2,7 @@
   "nav": {
     "home": "Home",
     "joinTeam": "Join the Team",
+    "news": "News",
     "partners": "Partner With Us",
     "contacts": "Contacts",
     "openMenu": "Open menu",
@@ -23,6 +24,10 @@
     "partners": {
       "title": "Partner With Us",
       "description": "Partner with PROLOG Cycling: our roadmap from club team to the Women's WorldTour, 2027–2032, the opportunity, and how to become a founding partner."
+    },
+    "news": {
+      "title": "News",
+      "description": "The latest news from PROLOG Cycling: squad updates, race reports and partner announcements from a women's competitive cycling team."
     },
     "contacts": {
       "title": "Contact Us",
@@ -54,6 +59,9 @@
         "body": "Riders selected on data and numbers, not connections. A team built around the people racing, not around hierarchy."
       }
     },
+    "newsKicker": "Latest News",
+    "newsHeading": "News from the Team",
+    "seeAllNews": "See All News",
     "roadmapKicker": "The Roadmap",
     "roadmapHeading": "Six years. One breakaway.",
     "roadmapIntro": "We've mapped the road from first race to the Women's WorldTour, 2027 to 2032. No shortcuts, no guesswork: here's exactly how we get there.",
@@ -327,6 +335,14 @@
       "success": "Thanks — your message has been sent. We'll get back to you soon.",
       "error": "Something went wrong sending your message. Please try again or email us directly."
     }
+  },
+  "news": {
+    "heading": "News",
+    "intro": "Squad updates, race reports and announcements from PROLOG Cycling.",
+    "empty": "No news yet. Check back soon.",
+    "readMore": "Read More",
+    "backToNews": "Back to News",
+    "allNews": "All News"
   },
   "notFound": {
     "heading": "404",

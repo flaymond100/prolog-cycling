@@ -1,0 +1,134 @@
+/* Shared by the /news list (News.tsx) and the article page
+   (NewsArticle.tsx). Card styles live with the card in NewsCard.css. */
+
+/* The list needs more room than the 720px reading column for a 3-up grid. */
+.page-news {
+  max-width: 1160px;
+}
+
+.news-intro {
+  max-width: 620px;
+  font: var(--text-body-md);
+}
+
+.news-list {
+  justify-content: start;
+  margin-top: var(--space-7);
+}
+
+.news-empty {
+  margin-top: var(--space-7);
+}
+
+/* Article */
+.news-back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+  font: 600 14px var(--font-body);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+}
+
+.news-back:hover {
+  color: var(--color-ink-muted);
+}
+
+.news-article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-3);
+  margin-top: var(--space-6);
+  font: var(--text-eyebrow);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.news-article-category {
+  color: var(--color-ink);
+}
+
+/* The global h1 is sized for one- or two-word page titles; an article
+   headline runs longer, so it steps down. */
+.news-article-title {
+  margin: var(--space-4) 0 var(--space-5);
+  font-size: clamp(28px, 4.4vw, 48px);
+  line-height: 1.05;
+}
+
+.news-article-summary {
+  font: var(--text-body-lg);
+  color: var(--color-ink);
+}
+
+.news-article-cover {
+  display: block;
+  width: 100%;
+  margin-top: var(--space-6);
+  border: 2px solid var(--color-border-strong);
+  box-sizing: border-box;
+}
+
+.news-prose {
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+  font: var(--text-body-sm);
+}
+
+.news-prose p,
+.news-prose ul,
+.news-prose ol {
+  margin: 0 0 var(--space-5);
+}
+
+.news-prose h2 {
+  margin: var(--space-7) 0 var(--space-4);
+  font: 400 24px/1.25 var(--font-hero);
+}
+
+.news-prose h3 {
+  margin: var(--space-6) 0 var(--space-3);
+  font: 600 20px/1.3 var(--font-body);
+  color: var(--color-ink);
+}
+
+.news-prose ul,
+.news-prose ol {
+  padding-left: var(--space-5);
+}
+
+.news-prose li + li {
+  margin-top: var(--space-2);
+}
+
+.news-prose strong {
+  color: var(--color-ink);
+}
+
+.news-prose a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.news-prose blockquote {
+  margin: var(--space-6) 0;
+  padding: var(--space-2) 0 var(--space-2) var(--space-5);
+  border-left: 2px solid var(--color-gold);
+  font: var(--text-body-lg);
+  color: var(--color-ink);
+}
+
+.news-prose blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.news-prose img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 2px solid var(--color-border-strong);
+  box-sizing: border-box;
+}

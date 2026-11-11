@@ -11,6 +11,21 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://prolog-cycling.com/news</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prolog-cycling.com/en/news/our-2027-squad-is-complete</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://prolog-cycling.com/en/news/we-are-now-prolog-audare-cycling-team</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://prolog-cycling.com/contacts</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
